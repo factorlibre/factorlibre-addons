@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+    <data>
+    
+    	<record id="view_pos_order_line_ean" model="ir.ui.view">
+            <field name="name">pos.order.line.ean</field>
+            <field name="model">pos.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <field name="product_id" on_change="onchange_product_id(parent.pricelist_id,product_id,qty,parent.partner_id)" position="before">
+                    <field name="ean13" on_change="onchange_ean13(ean13)"/>
+                    
+                </field>
+            </field>
+       </record>
+    	
+                  
+    		
+    </data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="sale_order_total_units_form_view">
+            <field name="name">sale.order.total_units.form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="amount_total" position="after">
+                    <field name="total_units"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

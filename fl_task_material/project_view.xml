@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="project_task_add_material_form">
+            <field name="name">project.task.add.material.form</field>
+            <field name="model">project.task</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <field name="work_ids" position="replace">
+                    <notebook colspan="4">
+                        <page string="Task Work">
+                            <field colspan="4" name="work_ids" nolabel="1" attrs="{'readonly':[('state','in',['done','draft'])]}">
+                                <tree string="Task Work" editable="top">
+                                    <field name="name"/>
+                                    <field name="hours" widget="float_time" sum="Spent Hours"/>
+                                    <field name="user_id"/>
+                                    <field name="date"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Task Materials">
+                            <field colspan="4" name="task_material_ids" nolabel="1" attrs="{'readonly':[('state','in',['done','draft','cancelled'])]}">
+                                <tree string="Task Materials" editable="top">
+                                    <field name="product_id" on_change="product_id_change(product_id, qty, product_uom)"/>
+                                    <field name="qty" on_change="product_id_change(product_id, qty, product_uom)"/>
+                                    <field name="product_uom"/>
+                                    <field name="user_id"
+                                        on_change="onchange_user_id(user_id)"/>
+                                    <field name="allowed_warehouses" invisible="1"/>
+                                    <field name="warehouse_id"
+                                        domain="[('id','in',[x[1] for x in allowed_warehouses])]"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>                                    
+                                </tree>
+                                <form string="Task Materials">
+                                    <field name="product_id" on_change="product_id_change(product_id, qty, product_uom)"/>
+                                    <field name="qty" on_change="product_id_change(product_id, qty, product_uom)"/>
+                                    <field name="product_uom"/>
+                                    <field name="user_id"
+                                        on_change="onchange_user_id(user_id)"/>
+                                    <field name="allowed_warehouses" invisible="1"/>
+                                    <field name="warehouse_id"
+                                        domain="[('id','in',[x[1] for x in allowed_warehouses])]"/>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Extraordinary Expenses">
+                            <field colspan="4" name="extraordinary_expenses_ids" nolabel="1"
+                                attrs="{'readonly':[('state','in',['done','draft','cancelled'])]}">
+                                <tree string="Extraordinary Expenses" editable="top">
+                                    <field name="name"/>
+                                    <field name="amount"/>
+                                    <field name="user_id"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                </tree>
+                                <form string="Extraordinary Expenses">
+                                    <field name="name"/>
+                                    <field name="amount"/>
+                                    <field name="user_id"/>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

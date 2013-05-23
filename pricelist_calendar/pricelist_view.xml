@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="pricelist_item_calendar_form_view">
+            <field name="name">pricelist.item.calendar.form</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/group" position="after">
+                    <group colspan="4" col="4" attrs="{'invisible':[('base.name','!=','Calendar')]}">
+                        <field name="time_slot" colspan="4"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

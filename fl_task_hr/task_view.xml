@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="employe_work_period_tree">
+            <field name="name">employee.work.period.tree</field>
+            <field name="model">employee.work.period</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Periods">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="employe_work_period_form">
+            <field name="name">employee.work.period.form</field>
+            <field name="model">employee.work.period</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Period">
+                    <field name="start_date" on_change="onchange_date(start_date, end_date)"/>
+                    <field name="end_date" on_change="onchange_date(start_date, end_date)"/>
+                </form>
+            </field>
+        </record>        
+
+        <record model="ir.ui.view" id="project_task_employee_tree">
+            <field name="name">project.task.employee.tree</field>
+            <field name="model">project.task.employee</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Employee">
+                    <field name="employee_id"/>
+                    <field name="employee_phone"/>
+                    <field name="employee_mail"/>
+                    <field name="work_address"/>
+                    <field name="hours" widget="float_time"/>
+                    <field name="subtotal_hour"/>
+                    <field name="subtotal_km"/>
+                    <field name="subtotal_extra_hour"/>
+                    <field name="subtotal_diet"/>
+                    <field name="other_cost"/>
+                    <field name="coordinator"/>
+                    <field name="state"/>
+                    <field name="create_date"/>
+                    <field name="task_id"/>
+                    <button name="confirm_employee" states="selected" 
+                        string="Confirm" icon="gtk-apply"/>
+                    <button name="pending" states="confirmed"
+                        string="Pending" icon="gtk-apply"/>
+                    <button name="discharge_employee" states="pending"
+                        string="Discharge" icon="gtk-apply"/>
+                    <button name="mark_as_worked" states="discharged"
+                        string="Mark as Worked" icon="gtk-apply"/>
+                    <button name="pending_payment" states="worked"
+                        string="Pending Payment" icon="gtk-apply"/>
+                    <button name="pay_employee" states="pending_payment"
+                        string="Pay" icon="gtk-apply"/>
+                    <button name="cancel" states="selected,confirmed,pending"
+                        string="Cancel" icon="gtk-cancel"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_employee_form">
+            <field name="name">project.task.employee.form</field>
+            <field name="model">project.task.employee</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Employee">
+                    <group colspan="4">
+                        <field name="employee_id"/>
+                        <field name="coordinator"/>
+                        <field name="employee_phone"/>
+                        <field name="employee_mail"/>
+                    </group>
+                    <separator colspan="4" string="Work Address"/>
+                    <field name="work_address" colspan="4" nolabel="1"/>
+                    <notebook colspan="4">
+                        <page string="Activity Info">
+                            <separator string="Activity" colspan="4"/>
+                            <field name="work_activity" colspan="4"
+                                nolabel="1"/>
+                            <separator string="Worker Instructions" colspan="4"/>
+                            <field name="instructions" colspan="4"
+                                nolabel="1"/>
+                            <separator string="Uniform" colspan="4"/>
+                            <field name="uniform" colspan="4"
+                                nolabel="1"/>
+                        </page>
+                        <page string="Work Info">
+                            <field name="self_employed"/>
+                            <field name="work_period_ids" colspan="4" nolabel="1"/>
+                            <group colspan="4" col="6">
+                                <field name="hours" widget="float_time"/>
+                                <field name="price_hour"/>
+                                <field name="subtotal_hour"/>
+                                <field name="km"/>
+                                <field name="price_km"/>
+                                <field name="subtotal_km"/>
+                                <field name="extra_hour"/>
+                                <field name="price_extra_hour"/>
+                                <field name="subtotal_extra_hour"/>
+                                <field name="diets"/>
+                                <field name="price_diet"/>
+                                <field name="subtotal_diet"/>
+                                <field name="other_cost"/>
+                                <button name="button_dummy" 
+                                    states="draft,selected,confirmed,pending,discharged" 
+                                    string="Compute" type="object" icon="gtk-execute" 
+                                    colspan="2"/>
+                            </group>
+                        </page>
+                        <page string="Observations">
+                            <field name="observations" colspan="4"
+                                nolabel="1"/>
+                        </page>
+                    </notebook>
+                    <group colspan="4" col="11">
+                        <field name="state"/>
+                        <button name="reserve_employee" states="selected"
+                            string="Reserve" icon="gtk-convert"/>
+                        <button name="confirm_employee" states="selected,reserve" 
+                            string="Confirm" icon="gtk-apply"/>
+                        <button name="pending" states="confirmed"
+                            string="Pending" icon="gtk-apply"/>
+                        <button name="discharge_employee" states="pending"
+                            string="Discharge" icon="gtk-apply"/>
+                        <button name="mark_as_worked" states="discharged"
+                            string="Mark as Worked" icon="gtk-apply"/>
+                        <button name="pending_payment" states="worked"
+                            string="Pending Payment" icon="gtk-apply"/>
+                        <button name="pay_employee" states="pending_payment"
+                            string="Pay" icon="gtk-apply"/>
+                        <button name="cancel" states="selected,confirmed,pending,discharged"
+                            string="Void" icon="gtk-cancel"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_project_task_employee_filter" model="ir.ui.view">
+            <field name="name">project.task.employee.select</field>
+            <field name="model">project.task.employee</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search Employee">
+                   <group>
+                       <field name="task_id"/>
+                       <field name="employee_id"/>
+                       <field name="state"/>
+                       <field name="create_date"/>
+                   </group>
+                   <newline/>
+                   <group>
+                        <filter icon="terp-check" string="Selected" name="selected" 
+                            domain="[('state','=','selected')]"/>
+                        <filter icon="terp-check" string="Confirmed" name="confirmed" 
+                            domain="[('state','=','confirmed')]"/>
+                        <filter icon="gtk-convert" string="Reserve" name="reserve" 
+                            domain="[('state','=','reserved')]"/>
+                        <filter icon="terp-check" string="Contract Pending" name="pending" 
+                            domain="[('state','=','pending')]"/>
+                        <filter icon="terp-check" string="Discharged" name="discharged" 
+                            domain="[('state','=','discharged')]"/>
+                        <filter icon="terp-check" string="Worked" name="worked" 
+                            domain="[('state','=','worked')]"/>
+                        <filter icon="terp-check" string="Pending Payment" name="pending_payment" 
+                            domain="[('state','=','pending_payment')]"/>
+                        <filter icon="terp-check" string="Paid" name="paid" 
+                            domain="[('state','=','paid')]"/>
+                        <filter icon="gtk-cancel" string="Void" name="cancel" 
+                            domain="[('state','=','cancel')]"/>  
+                   </group>
+                   <newline />
+                    <group expand="0" string="Group By..." groups="base.group_extended">
+                        <filter string="Employee" name="Employee"  icon="terp-personal" domain="[]" 
+                            context="{'group_by':'employee_id'}"/>
+                        <filter string="Coordinator" name="Coordinator" icon="terp-personal" domain="[]"
+                            context="{'group_by':'coordinator'}"/>
+                        <filter string="State" name="State" icon="terp-folder-blue" domain = "[]" context="{'group_by':'state'}"/>
+                        <filter string="Task/Quadrant" name="quadrant" icon="terp-folder-blue"
+                            domain="[]" context="{'group_by':'task_id'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+        <record id="view_task_user_id_tree2" model="ir.ui.view">
+            <field name="name">project.task.user_id.tree</field>
+            <field name="model">project.task</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="replace">
+                    <field name="user_id" string="Task Manager"/>
+                    <field name="user_ids"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_employee_inherit">
+            <field name="name">project.task.inherit.employee</field>
+            <field name="model">project.task</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="replace">
+                    <field name="user_id" string="Task Manager"/>
+                </field>
+                <page string="Information" position="before">
+                    <page string="Employee">
+                        <field name="dificulty"/>
+                        <field name="task_employee_ids" colspan="4" nolabel="1"/>
+                        <group colspan="4" col="4">
+                            <button name="discharge_employees" type="object"
+                                string="Discharge Employees"/>
+                            <button name="mark_as_worked" type="object"
+                                string="Worked"/>
+                            <button name="payment_pending" type="object"
+                                string="Payment Pending"/>
+                            <button name="pay_employees" type="object"
+                                string="Paid"/>
+                        </group>
+                    </page>
+                </page>
+                <page string="Information" position="after">
+                    <page string="Assigned To">
+                        <field name="user_ids" colspan="4" nolabel="1"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_task_search_user_ids_form" model="ir.ui.view">
+            <field name="name">project.task.search.user_ids.form</field>
+            <field name="model">project.task</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="project.view_task_search_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="replace">
+                    <field name="user_id" string="Task Manager">
+                        <filter domain="[('user_id','=',uid)]"  
+                            help="My Managed Tasks" icon="terp-personal" />
+                        <filter domain="[('user_id','=',False)]"  
+                            help="Task without Manager" icon="terp-personal-" />
+                    </field>
+                    <field name="user_ids">
+                        <filter domain="[('user_ids','in',[uid])]"  
+                            help="My Assigned Tasks" icon="terp-personal" />
+                    </field>
+                </field>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="project_task_employee_action">
+            <field name="name">Employee Lines</field>
+            <field name="res_model">project.task.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_selected":1,
+"search_default_confirmed":1,
+"search_default_pending":1,
+"search_default_discharged":1,
+"search_default_worked":1,
+"search_default_pending_payment":1}</field>
+            <field name="search_view_id" ref="view_project_task_employee_filter"/>
+        </record>
+
+        <menuitem id="menu_project_task_employee" parent="project.menu_project_management"
+            action="project_task_employee_action"/>
+
+        <act_window
+            context="{'search_default_employee_id': [active_id], 'default_employee_id': active_id}"
+            id="act_hr_employee_2_project_task_employee"
+            name="Employee Lines"
+            res_model="project.task.employee"
+            src_model="hr.employee"/>
+
+        <record id="project.action_view_task" model="ir.actions.act_window">
+            <field name="name">Tasks</field>
+            <field name="res_model">project.task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban,calendar,gantt,graph</field>
+            <field eval="False" name="filter"/>
+            <field name="view_id" eval="False"/>
+            <field name="context">{"search_default_draft": 1, "search_default_open":1, "search_default_project_id": project_id}</field>
+            <field name="search_view_id" ref="project.view_task_search_form"/>
+            <field name="help">A task represents a work that has to be done. Each user works in his own list of tasks where he can record his task work in hours. He can work and close the task itself or delegate it to another user. If you delegate a task to another user, you get a new task in pending state, which will be reopened when you have to review the work achieved. If you install the project_timesheet module, task work can be invoiced based on the project configuration. With the project_mrp module, sales orders can create tasks automatically when they are confirmed.</field>
+        </record>
+
+        <record id="project.open_view_task_list_kanban" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">kanban</field>
+            <field name="act_window_id" ref="project.action_view_task"/>
+        </record>
+    </data>
+</openerp>

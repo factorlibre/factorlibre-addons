@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="project_task_date_end_work_view">
+            <field name="name">project.task.date_end_work.form</field>
+            <field name="model">project.task</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <tree string="Task Work" position="replace">
+                    <tree string="Task Work">
+                        <field name="name"/>
+                        <field name="time_slot"/>
+                        <field name="hours" widget="float_time" sum="Spent Hours"/>
+                        <field name="date"/>
+                        <field name="user_id"/>
+                    </tree>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_work_inh_view">
+            <field name="name">project.task.work.form2</field>
+            <field name="model">project.task.work</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_work_form"/>
+            <field name="arch" type="xml">
+                <form string="Task Work" position="replace">
+                    <form string="Task Work">
+                        <field colspan="4" name="name" select="1"/>
+                        <field name="time_slot"/>
+                        <field name="hours" select="1" widget="float_time"/>
+                        <field name="date" select="1"/>                        
+                        <field name="user_id" select="1"/>
+                        <field name="company_id" groups="base.group_multi_company" widget="selection"/>
+                    </form>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_work_tree_inh_view">
+            <field name="name">project.task.work.tree2</field>
+            <field name="model">project.task.work</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="project.view_task_work_tree"/>
+            <field name="arch" type="xml">
+                <tree string="Task Work" position="replace">
+                    <tree editable="top" string="Task Work">
+                        <field name="date"/>
+                        <field name="time_slot"/>
+                        <field name="name"/>
+                        <field name="hours" widget="float_time"/>
+                        <field name="user_id"/>
+                    </tree>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</openerp>

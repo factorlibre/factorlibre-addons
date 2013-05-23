@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sale_order_adjust_line" model="ir.ui.view">
+            <field name="name">sale.order.adjust_line.form</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <separator colspan="5" string="Notes" position="replace"/>
+                <field colspan="5" name="notes" nolabel="1" position="replace"/>
+                <xpath expr="/form/notebook/page[@string='Sales Order']/field[@name='order_line']/form/notebook/page[@string='Order Line']" position="after">
+                    <page string="Notes">
+                        <field name="notes" nolabel="1" colspan="4"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,151 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#   * fl_chronoexpress_carrier_file
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-12 08:20+0000\n"
+"PO-Revision-Date: 2013-04-12 08:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:delivery.carrier,reimbursement:0
+msgid "Reimbursement"
+msgstr "Contrareembolso"
+
+#. module: fl_chronoexpress_carrier_file
+#: sql_constraint:res.country:0
+msgid "The code of the country must be unique !"
+msgstr "¡El código de país debe ser único!"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:res.country,keypai:0
+msgid "KEYPAI"
+msgstr "KEYPAI"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:download.carrier.file.wizard,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:download.carrier.file.wizard,format_id:0
+msgid "Carrier File Format"
+msgstr "Formato fichero transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.model,name:fl_chronoexpress_carrier_file.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.ui.menu,name:fl_chronoexpress_carrier_file.menu_carrier_file_root
+msgid "Carrier Files"
+msgstr "Ficheros Transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.actions.act_window,name:fl_chronoexpress_carrier_file.action_view_carrier_file_wizard
+#: model:ir.ui.menu,name:fl_chronoexpress_carrier_file.menu_generate_carrier_file
+msgid "Generate Carrier Files"
+msgstr "Generar ficheros de transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:delivery.carrier,format_id:0
+msgid "File Format"
+msgstr "Formato de archivo"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:download.carrier.file.wizard,carrier_file_name:0
+msgid "Carrier File Name"
+msgstr "Nombre archivo transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: sql_constraint:res.country:0
+msgid "The name of the country must be unique !"
+msgstr "¡El nombre del país debe ser único!"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.model,name:fl_chronoexpress_carrier_file.model_download_carrier_file_wizard
+msgid "download.carrier.file.wizard"
+msgstr "download.carrier.file.wizard"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.model,name:fl_chronoexpress_carrier_file.model_carrier_file_wizard
+msgid "carrier.file.wizard"
+msgstr "carrier.file.wizard"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.actions.act_window,name:fl_chronoexpress_carrier_file.action_view_download_carrier_file_wizard
+#: model:ir.ui.menu,name:fl_chronoexpress_carrier_file.menu_download_carrier_file
+msgid "Download Carrier Files"
+msgstr "Descargar fichero transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: view:carrier.file.wizard:0
+msgid "Generate"
+msgstr "Generar"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:carrier.file.wizard,end_date:0
+msgid "End Date"
+msgstr "Fecha Fin"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.model,name:fl_chronoexpress_carrier_file.model_res_country
+msgid "Country"
+msgstr "País"
+
+#. module: fl_chronoexpress_carrier_file
+#: model:ir.model,name:fl_chronoexpress_carrier_file.model_delivery_carrier
+msgid "Carrier"
+msgstr "Transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: sql_constraint:stock.picking:0
+msgid "Reference must be unique per Company!"
+msgstr "¡La referencia debe ser única por compañía!"
+
+#. module: fl_chronoexpress_carrier_file
+#: code:addons/fl_chronoexpress_carrier_file/delivery.py:90
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:download.carrier.file.wizard,carrier_file:0
+msgid "Carrier File"
+msgstr "Fichero de transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: selection:download.carrier.file.wizard,state:0
+msgid "Init"
+msgstr "Init"
+
+#. module: fl_chronoexpress_carrier_file
+#: view:download.carrier.file.wizard:0
+msgid "Download Carrier File"
+msgstr "Descargar fichero de transportista"
+
+#. module: fl_chronoexpress_carrier_file
+#: view:download.carrier.file.wizard:0
+#: selection:download.carrier.file.wizard,state:0
+msgid "Download"
+msgstr "Descarga"
+
+#. module: fl_chronoexpress_carrier_file
+#: field:carrier.file.wizard,start_date:0
+msgid "Start Date"
+msgstr "Fecha Inicio"
+
+#. module: fl_chronoexpress_carrier_file
+#: view:carrier.file.wizard:0
+msgid "Generate Carrier File"
+msgstr "Generar fichero de transportista"
+

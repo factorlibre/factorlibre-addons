@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+    <record id="group_minimum_price_manager" model="res.groups">
+        <field name="name">Manager - Sale Minimum Price</field>
+        <field name="category_id" ref="base.module_category_sales_management"/>
+    </record>
+</data>
+</openerp>

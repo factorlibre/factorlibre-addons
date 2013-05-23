@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_promotions_pos_form" model="ir.ui.view">
+            <field name="name">pos.order.promotion</field>
+            <field name="model">pos.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <page string="Extra Info" position="after">
+                    <page string="Promotions/Refunds">
+                        <group colspan="4">
+                            <field name="coupon_code" invisible="1"/>
+                            <button name="apply_promotions" type="object"
+                                string="Apply Promotions" states="draft"/>
+                            <field name="promotion_line_ids" colspan="4" nolabel="1" mode="tree">
+                                <tree string="Promotion Line" editable="top">
+                                    <field name="coupon_code"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <menuitem id="pos_promotion_root" name="Promotions"
+            parent="point_of_sale.menu_point_root" groups="point_of_sale.group_pos_manager"/>
+
+        <menuitem id="pos_promotion_rules_menu" parent="pos_promotion_root"
+            action="sale_promotions.act_promotion_rules" groups="point_of_sale.group_pos_manager"/>
+    </data>
+</openerp>

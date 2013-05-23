@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="delivery_carrier_file_form" model="ir.ui.view">
+            <field name="name">delivery.carrier.file.form</field>
+            <field name="model">delivery.carrier</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+            <field name="arch" type="xml">
+                <field name="active" position="after">
+                    <field name="format_id"/>
+                </field>
+                <field name="normal_price" position="before">
+                    <field name="reimbursement"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="carrier_file_wizard_form" model="ir.ui.view">
+            <field name="name">carrier.file.wizard.form</field>
+            <field name="model">carrier.file.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Generate Carrier File">
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <button colspan="4" name="action_accept"
+                        type="object" string="Generate"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_carrier_file_wizard" model="ir.actions.act_window">
+            <field name="name">Generate Carrier Files</field>
+            <field name="res_model">carrier.file.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_carrier_file_root" name="Carrier Files"
+            parent="stock.menu_stock_root" sequence="10"/>
+
+        <menuitem id="menu_generate_carrier_file"
+            parent="menu_carrier_file_root" action="action_view_carrier_file_wizard"
+            sequence="1"/>
+
+        <record id="download_carrier_file_wizard_form" model="ir.ui.view">
+            <field name="name">download.carrier.file.wizard.form</field>
+            <field name="model">download.carrier.file.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Download Carrier File">
+                    <field name="state" invisible="1"/>
+                    <group colspan="4" attrs="{'invisible': [('state','!=','init')]}">
+                        <field name="format_id" width="600"/>
+                        <button colspan="4" string="Download"
+                            name="download_file" type="object"/>
+                    </group>
+                    <group colspan="4" attrs="{'invisible': [('state','!=','download')]}">
+                        <field name="carrier_file" filename="carrier_file_name"/>
+                    </group>                
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_download_carrier_file_wizard" model="ir.actions.act_window">
+            <field name="name">Download Carrier Files</field>
+            <field name="res_model">download.carrier.file.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_download_carrier_file"
+            parent="menu_carrier_file_root" action="action_view_download_carrier_file_wizard"
+            sequence="2"/>
+    </data>
+</openerp>

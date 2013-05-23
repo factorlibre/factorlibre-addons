@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="efficiency_report_wizard_form" model="ir.ui.view">
+            <field name="name">efficiency.report.wizard.form</field>
+            <field name="model">efficiency.report.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Efficiency Report">
+                    <group colspan="4" col="4">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="category_id" domain="[('parent_id','=',False)]"/>
+                        <field name="seller_id" domain="[('supplier','=',True)]"/>
+                    </group>
+                    <button name="calculate_efficiency"
+                        string="Calculate" colspan="4"
+                        type="object"
+                        icon="gtk-apply"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="efficiency_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Efficiency Report</field>
+            <field name="res_model">efficiency.report.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="efficiency_report_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="report_product_efficiency_menu" parent="stock.next_id_61"
+            action="efficiency_report_wizard_action"/>
+
+        <record id="efficiency_report_line_tree_view" model="ir.ui.view">
+            <field name="name">efficiency.report.line.tree</field>
+            <field name="model">efficiency.report.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Efficiency Report">
+                    <field name="warehouse_id"/>
+                    <field name="product_id"/>
+                    <field name="stock"/>
+                    <field name="move_in_qty"/>
+                    <field name="move_out_qty"/>
+                    <field name="move_efficiency"/>
+                    <field name="buy_qty"/>
+                    <field name="buy_total_qty"/>
+                    <field name="sell_qty"/>
+                    <field name="efficiency"/>
+                    <field name="purchase_amount"/>
+                    <field name="sale_amount"/>
+                    <field name="seller_id" invisible="1"/>
+                    <field name="product_template_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="efficiency_report_line_search_view" model="ir.ui.view">
+            <field name="name">efficiency.report.line.search</field>
+            <field name="model">efficiency.report.line</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Efficiency Report">
+                    <field name="product_id"/>
+                    <field name="warehouse_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter name="group_warehouse" string="Warehouse"
+                            context="{'group_by':'warehouse_id'}"/>
+                        <filter name="group_product_template" string="Product Template"
+                            context="{'group_by':'product_template_id'}"
+                            icon="terp-stock_symbol-selection"/>
+                        <filter name="group_product" string="Product"
+                            context="{'group_by':'product_id'}"
+                            icon="terp-stock_symbol-selection"/>
+                        <filter name="group_seller" string="Supplier"
+                            context="{'group_by':'seller_id'}"
+                            icon="terp-partner"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</openerp>  

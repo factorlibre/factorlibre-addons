@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="seq_type_project_task_order_number" model="ir.sequence.type">
+            <field name="name">Project Task Order Number</field>
+            <field name="code">project.task.order_number</field>
+        </record>
+
+        <record id="seq_project_task_order_number" model="ir.sequence">
+            <field name="name">Project Task Order Number</field>
+            <field name="code">project.task.order_number</field>
+            <field name="prefix">OT-%(y)s</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</openerp>

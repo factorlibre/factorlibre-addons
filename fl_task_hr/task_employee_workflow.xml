@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wkf_task_employee" model="workflow">
+            <field name="name">project.task.employee.wkf</field>
+            <field name="osv">project.task.employee</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <!-- Activities -->
+        <record id="act_selected" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">selected</field>
+            <field name="flow_start">True</field>
+        </record>
+
+        <record id="act_reserve" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">reserve</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'reserve'})</field>
+        </record>
+
+        <record id="act_confirmed" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">confirmed</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'confirmed'})</field>
+        </record>
+
+        <record id="act_pending" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">pending</field>
+            <field name="kind">function</field>
+            <field name="action">contract_pending()</field>
+        </record>
+
+        <record id="act_discharged" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">discharged</field>
+            <field name="kind">function</field>
+            <field name="action">discharge_employee()</field>
+        </record>
+
+        <record id="act_worked" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">worked</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'worked'})</field>
+        </record>
+
+        <record id="act_pending_payment" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">pending_payment</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'pending_payment'})</field>
+        </record>
+
+        <record id="act_paid" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">paid</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'paid'})</field>
+            <field name="flow_stop">True</field>
+        </record>
+
+        <record id="act_cancel" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_task_employee"/>
+            <field name="name">cancel</field>
+            <field name="flow_stop">True</field>
+            <field name="kind">stopall</field>
+            <field name="action">action_cancel()</field>
+        </record>
+
+        <!-- transition -->
+        <record id="trans_selected_confirmed" model="workflow.transition">
+            <field name="act_from" ref="act_selected"/>
+            <field name="act_to" ref="act_confirmed"/>
+            <field name="signal">confirm_employee</field>
+        </record>
+
+        <record id="trans_selected_reserve" model="workflow.transition">
+            <field name="act_from" ref="act_selected"/>
+            <field name="act_to" ref="act_reserve"/>
+            <field name="signal">reserve_employee</field>
+        </record>
+
+        <record id="trans_reserve_confirmed" model="workflow.transition">
+            <field name="act_from" ref="act_reserve"/>
+            <field name="act_to" ref="act_confirmed"/>
+            <field name="signal">confirm_employee</field>
+        </record>
+
+        <record id="trans_selected_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_selected"/>
+            <field name="act_to" ref="act_cancel"/>
+            <field name="signal">cancel</field>
+        </record>
+
+        <record id="trans_confirmed_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_confirmed"/>
+            <field name="act_to" ref="act_cancel"/>
+            <field name="signal">cancel</field>
+        </record>
+
+        <record id="trans_confirmed_pending" model="workflow.transition">
+            <field name="act_from" ref="act_confirmed"/>
+            <field name="act_to" ref="act_pending"/>
+            <field name="signal">pending</field>
+        </record>
+
+        <record id="trans_pending_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_pending"/>
+            <field name="act_to" ref="act_cancel"/>
+            <field name="signal">cancel</field>
+        </record>
+
+        <record id="trans_discharged_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_discharged"/>
+            <field name="act_to" ref="act_cancel"/>
+            <field name="signal">cancel</field>
+        </record>
+
+        <record id="trans_pending_discharged" model="workflow.transition">
+            <field name="act_from" ref="act_pending"/>
+            <field name="act_to" ref="act_discharged"/>
+            <field name="signal">discharge_employee</field>
+        </record>
+
+        <record id="trans_discharged_worked" model="workflow.transition">
+            <field name="act_from" ref="act_discharged"/>
+            <field name="act_to" ref="act_worked"/>
+            <field name="signal">mark_as_worked</field>
+        </record>
+
+        <record id="trans_worked_pending_payment" model="workflow.transition">
+            <field name="act_from" ref="act_worked"/>
+            <field name="act_to" ref="act_pending_payment"/>
+            <field name="signal">pending_payment</field>
+        </record>
+
+        <record id="trans_pending_payment_paid" model="workflow.transition">
+            <field name="act_from" ref="act_pending_payment"/>
+            <field name="act_to" ref="act_paid"/>
+            <field name="signal">pay_employee</field>
+        </record>
+
+    </data>
+</openerp>

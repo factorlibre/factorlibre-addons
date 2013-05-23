@@ -1,0 +1,105 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* fl_wholesaler_variant_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-12 10:39+0000\n"
+"PO-Revision-Date: 2012-11-12 11:41+0100\n"
+"Last-Translator: Hugo Santos <hugosantosred@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: fl_wholesaler_variant_order
+#: model:ir.actions.act_window,name:fl_wholesaler_variant_order.action_stock_picking_wholesaler_product
+msgid "Wholesaler Stock Picking"
+msgstr "Albarán Mayorista"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler.line,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler,tmpl_id:0
+msgid "Product Template"
+msgstr "Plantilla Producto"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler,location_dest_id:0
+msgid "Destination Location"
+msgstr "Ubicación destino"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler,location_id:0
+msgid "Source Location"
+msgstr "Ubicación Origen"
+
+#. module: fl_wholesaler_variant_order
+#: view:order.wholesaler:0
+#: field:order.wholesaler,wholesaler_line_ids:0
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: fl_wholesaler_variant_order
+#: model:ir.model,name:fl_wholesaler_variant_order.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea pedido de compra"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler.line,qty:0
+msgid "Qty"
+msgstr "Cantidad"
+
+#. module: fl_wholesaler_variant_order
+#: model:ir.model,name:fl_wholesaler_variant_order.model_order_wholesaler
+msgid "order.wholesaler"
+msgstr "order.wholesaler"
+
+#. module: fl_wholesaler_variant_order
+#: view:order.wholesaler:0
+msgid "Create Lines"
+msgstr "Crear Líneas"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler.line,wholesaler_id:0
+msgid "wholesaler"
+msgstr "Mayorista"
+
+#. module: fl_wholesaler_variant_order
+#: view:order.wholesaler:0
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: fl_wholesaler_variant_order
+#: view:order.wholesaler:0
+msgid "Get Variant"
+msgstr "Cargar Variantes"
+
+#. module: fl_wholesaler_variant_order
+#: field:order.wholesaler.line,price_unit:0
+msgid "Price Unit"
+msgstr "Precio Ud."
+
+#. module: fl_wholesaler_variant_order
+#: model:ir.actions.act_window,name:fl_wholesaler_variant_order.action_purchase_order_wholesaler_product
+#: model:ir.actions.act_window,name:fl_wholesaler_variant_order.action_sale_order_wholesaler_product
+#: view:order.wholesaler:0
+msgid "Wholesaler Order"
+msgstr "Pedido Mayorista"
+
+#. module: fl_wholesaler_variant_order
+#: model:ir.model,name:fl_wholesaler_variant_order.model_order_wholesaler_line
+msgid "order.wholesaler.line"
+msgstr "order.wholesaler.line"
+

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="order_wholesaler_view">
+            <field name="name">order.wholesaler.form</field>
+            <field name="model">order.wholesaler</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Wholesaler Order">
+                    <group colspan="4" col="5">
+                        <field name="partner_id" invisible="1"/>
+                        <field name="tmpl_id" colspan="4"/>
+                        <button name="get_variant" type="object"
+                        string="Get Variant"/>
+                    </group>
+                    <field name="wholesaler_line_ids" mode="tree" colspan="4"
+                        nolabel="1" width="700" height="300">
+                        <tree string="Lines" editable="bottom">
+                            <field name="product_id"/>
+                            <field name="qty"/>
+                            <field name="price_unit"/>
+                        </tree>
+                    </field>
+                    <group colspan="4" col="2">
+                        <button special="cancel" string="Close"
+                            icon="gtk-cancel"/>
+                        <button name="create_lines" type="object"
+                            string="Create Lines" icon="gtk-ok"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="order_wholesaler_stock_view">
+            <field name="name">order.wholesaler.stock_picking.form</field>
+            <field name="model">order.wholesaler</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Wholesaler Order">
+                    <group colspan="4" col="4">
+                        <field name="partner_id" invisible="1"/>
+                        <field name="tmpl_id" colspan="3"/>
+                        <button name="get_variant" type="object"
+                        string="Get Variant"/>
+                        <field name="location_id" required="1" domain="[('usage','!=','view')]"/>
+                        <field name="location_dest_id" required="1" domain="[('usage','!=','view')]"/>
+                    </group>
+                    <field name="wholesaler_line_ids" mode="tree" colspan="4"
+                        nolabel="1" width="700" height="300">
+                        <tree string="Lines" editable="bottom">
+                            <field name="product_id"/>
+                            <field name="qty"/>
+                            <field name="price_unit" invisible="1"/>
+                        </tree>
+                    </field>
+                    <group colspan="4" col="2">
+                        <button special="cancel" string="Close"
+                            icon="gtk-cancel"/>
+                        <button name="create_lines" type="object"
+                            string="Create Lines" icon="gtk-ok"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="order_wholesaler_purchase_view">
+            <field name="name">order.wholesaler.purchase.form</field>
+            <field name="model">order.wholesaler</field>
+            <field name="type">form</field>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <form string="Wholesaler Order">
+                    <group colspan="4" col="5">
+                        <field name="partner_id" invisible="1"/>
+                        <field name="tmpl_id" colspan="4"/>
+                        <button name="get_variant" type="object"
+                        string="Get Variant"/>
+                    </group>
+                    <field name="wholesaler_line_ids" mode="tree" colspan="4"
+                        nolabel="1" width="700" height="300">
+                        <tree string="Lines" editable="bottom">
+                            <field name="product_id"/>
+                            <field name="qty"/>
+                            <field name="price_unit"/>
+                        </tree>
+                    </field>
+                    <group colspan="4" col="2">
+                        <button special="cancel" string="Close"
+                            icon="gtk-cancel"/>
+                        <button name="create_lines" type="object"
+                            string="Create Lines" icon="gtk-ok"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Wholesaler Order"
+            res_model="order.wholesaler"
+            src_model="sale.order"
+            view_mode="form"
+            view_id="order_wholesaler_view"
+            target="new"
+            key2="client_action_multi"
+            id="action_sale_order_wholesaler_product"/>
+
+        <act_window name="Wholesaler Stock Picking"
+            res_model="order.wholesaler"
+            src_model="stock.picking"
+            view_mode="form"
+            view_id="order_wholesaler_stock_view"
+            target="new"
+            key2="client_action_multi"
+            id="action_stock_picking_wholesaler_product"/>
+
+        <act_window name="Wholesaler Order"
+            res_model="order.wholesaler"
+            src_model="purchase.order"
+            view_mode="form"
+            view_id="order_wholesaler_purchase_view"
+            target="new"
+            key2="client_action_multi"
+            id="action_purchase_order_wholesaler_product"/>
+
+    </data>
+</openerp>

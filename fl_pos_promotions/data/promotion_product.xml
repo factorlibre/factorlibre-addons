@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="product.category" id="cat_pos_promotion">
+            <field name="parent_id" ref="null"/>
+            <field name="name">PoS Promotion</field>
+        </record>
+        <record model="product.template" id="product_template_pos_promotion">
+            <field name="name">Pos Promotion</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="uom_po_id" ref="product.product_uom_unit"/>
+            <field name="type">service</field>
+            <field name="categ_id" ref="cat_pos_promotion"/>
+        </record>
+        <record model="product.product" id="product_product_pos_promotion">
+            <field name="default_code">POSPROMO</field>
+            <field name="name">PoS Promotion</field>
+            <field name="list_price">0.00</field>
+            <field name="standard_price">0.00</field>
+            <field name="product_tmpl_id" ref="product_template_pos_promotion"/>            
+        </record>
+    </data>
+</openerp>

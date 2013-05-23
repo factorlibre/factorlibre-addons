@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_pos_order_time_slot_tree">
+            <field name="name">pos.order.time_slot.tree</field>
+            <field name="model">pos.order</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="time_slot"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_pos_time_slot_tree">
+            <field name="name">pos.time.slot.tree</field>
+            <field name="model">pos.time.slot</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Time Slots" editable="bottom">
+                    <field name="name"/>
+                    <field name="time_start" widget="float_time"/>
+                    <field name="time_end" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_pos_time_slot">
+            <field name="name">Time Slots</field>
+            <field name="res_model">pos.time.slot</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_pos_time_slot" parent="point_of_sale.menu_point_config_product"
+            action="action_pos_time_slot" groups="point_of_sale.group_pos_manager"/>
+
+        <record model="ir.ui.view" id="view_pos_order_filter_time_slot">
+            <field name="name">pos.order.filter.time_slot</field>
+            <field name="model">pos.order</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_filter"/>
+            <field name="arch" type="xml">
+                <group string="Group By..." position="inside">
+                    <filter string="Time Slot" icon="terp-go-month" domain="[]" context="{'group_by':'time_slot'}"/>
+                </group>
+            </field>
+        </record>
+    </data>
+</openerp>

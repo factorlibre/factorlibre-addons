@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sale_order_change_price_unit" model="ir.ui.view">
+            <field name="name">sale.order.change.price.unit.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="price_unit" position="replace">
+                    <field name="price_unit" 
+                        on_change="onchange_price_unit(product_id, price_unit)"/>
+                    <field name="minimum_price" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_sale_order_minimum_price" model="ir.ui.view">
+            <field name="name">sale.order.minimum_price.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="order_line" position="after">
+                    <field name="minimum_price" groups="fl_minimum_sale_price.group_minimum_price_manager"/>
+                    <field name="force_price" groups="fl_minimum_sale_price.group_minimum_price_manager"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

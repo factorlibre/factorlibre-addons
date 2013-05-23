@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="project_planning_task_form">
+            <field name="name">project.planning.task.form</field>
+            <field name="model">project.task</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="priority" eval="25"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/group[1]" position="replace">
+                    <group colspan="4" col="4">
+                        <group colspan="4" col="4" attrs="{'readonly':[('template','=',0)],
+                            'required':[('template','=',1)], 'invisible': [('template','=',0)]}">
+                            <field name="range_code" />
+                        </group>
+                        <group colspan="4" attrs="{'invisible':[('template','=',1)]}">
+                            <field name="order_number" />
+                        </group>
+                        <group colspan="4">
+                            <field name="name" select="1" string="Resume"/>
+                            <field name="total_hours" widget="float_time"
+                            attrs="{'invisible':[('template','=',1)]}"/>
+                        </group>
+                        
+                    </group>
+                    <group colspan="4" col="6" attrs="{'invisible':[('template','=',1)]}">
+                        <field name="project_id" select="1"  on_change="onchange_project(project_id)"
+                            domain="[('state','not in',['close','cancelled'])]"/>
+                        <field name="progress" widget="progressbar"/>
+                        <field name="date_deadline" attrs="{'readonly':[('state','in',['done', 'cancelled'])]}"/>
+                    </group>
+                </xpath>
+                <page string="Information" position="replace">
+                    
+                    <page string="Tasks">
+                        <group col="2" colspan="2">
+                            <field
+                                name="planned_hours"
+                                widget="float_time"
+                                attrs="{'readonly':[('state','!=','draft')]}"
+                                on_change="onchange_planned(planned_hours, effective_hours)"/>
+                            <field
+                                name="effective_hours"
+                                widget="float_time" invisible="1"/>
+                        </group>
+                        <group col="3" colspan="2" attrs="{'invisible':[('template','=',1)]}">
+                            <field name="remaining_hours" widget="float_time" attrs="{'readonly':[('state','!=','draft')]}" colspan="2"/>
+                            <button name="%(project.action_project_task_reevaluate)d" string="Reevaluate" type="action" colspan="1" target="new" states="open,pending" icon="gtk-edit"
+                                invisible="1"/>
+                        </group>
+                        <separator string="Description" colspan="4"/>
+                        <field colspan="4" name="description" nolabel="1"  attrs="{'readonly':[('state','=','done')]}" widget="text_wiki"/>
+                            
+                        <group col="11" colspan="4" 
+                          attrs="{'invisible': [('template','=',1)]}">
+                            <field name="state" widget="statusbar" statusbar_visible="draft,open,done" statusbar_colors='{"pending":"blue"}' select="1"/>
+                            <button name="do_cancel" states="draft,open,pending" string="Cancel" type="object" icon="gtk-cancel"/>
+                            <button name="do_draft" states="open" string="Draft" type="object" icon="gtk-indent"/>
+                            <button name="do_open" states="pending,draft" string="Start Task" type="object" icon="gtk-media-play"/>
+                            <button name="%(project.action_project_task_reevaluate)d" states="done,cancelled" string="Reactivate" type="action" icon="gtk-convert" context="{'button_reactivate':True}" />
+                            <button name="do_pending" states="open" string="Pending" type="object" icon="gtk-media-pause"/>
+                            <button groups="base.group_extended" name="%(project.action_project_task_delegate)d" states="pending,open,draft" string="Delegate" type="action" icon="terp-personal"/>
+                            <button name="action_close" states="pending,open" string="Done" type="object" icon="terp-dialog-close"/>
+                        </group>
+                    </page>
+                    <page string="Description" attrs="{'readonly':[('state','=','done')]}">
+                        <group colspan="2" col="2">
+                            <separator string="Descriptive data" colspan="2"/>
+                            <field name="priority"/>
+                            <field name="task_action"
+                                attrs="{'readonly': [('template','=',1)]}"/>
+                            <field name="task_periodicy" 
+                                attrs="{'readonly': [('template','=',0)]}"/>
+                            <field name="task_nature"/>
+                            <field name="sequence" invisible="1"/>
+                            <field name="official" invisible="1"/>
+                            <field name="template" invisible="1"/>
+                        </group>
+                        <group colspan="2" col="2" 
+                            attrs="{'invisible': [('template','=',1)]}">
+                            <separator string="Dates" colspan="2"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="create_date"/>
+                        </group>
+                        <group col="2" colspan="2">
+                            <separator string="Identificative Data" colspan="2"/>
+                            <field name="project_range_id" string="Planning Range" readonly="1"/>
+                            <field name="task_type"/>
+                            <field name="task_execution"/>
+                        </group>
+                        <group col="4" colspan="2">
+                            <field name="type_id" widget="selection" readonly="1"/>
+                            <button name="prev_type" string="Previous" type="object" icon="gtk-go-back" help="Change to Previous Stage"/>
+                            <button name="next_type" string="Next" type="object" icon="gtk-go-forward" help="Change to Next Stage"/>
+                        </group>
+                        <group colspan="4" col="4" attrs="{'invisible':[('template','=',1)]}">
+                            <separator string="Miscelleanous" colspan="4"/>
+                            <field name="partner_id" string="Cliente"/>
+                            <field name="company_id" select="1" groups="base.group_multi_company" widget="selection"/>
+                        </group>
+                        <separator colspan="4" string="Notes"/>
+                        <field colspan="4" name="notes" nolabel="1"/>
+                    </page>
+                    <page string="Operators" attrs="{'invisible':[('template','=',1)]}">
+                        <field name="user_ids" colspan="4"
+                            nolabel="1"/>
+                       
+                    </page>
+                    <page string="Hours" attrs="{'invisible': [('template','=',1)]}">
+                        <field colspan="4" name="work_ids" nolabel="1" attrs="{'readonly':[('state','in',['done','draft','cancelled'])]}">
+                            <tree string="Task Work" editable="top">
+                                <field name="name" width="600"/>
+                                <field name="hours" widget="float_time" sum="Spent Hours"/>
+                                <field name="user_id"/>
+                                <field name="date"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+                <page string="Delegations History" position="replace">
+                    <page groups="base.group_extended" string="Delegations History" invisible="1">
+                        <separator string="Parent Tasks" colspan="4"/>
+                        <field colspan="4" height="150" name="parent_ids" nolabel="1"/>
+                        <separator string="Delegated tasks" colspan="4"/>
+                        <field colspan="4" height="150" name="child_ids" nolabel="1">
+                            <tree string="Delegated tasks">
+                                <field name="name"/>
+                                <field name="user_id"/>
+                                <field name="state"/>
+                                <field name="effective_hours" widget="float_time"/>
+                                <field name="progress" widget="progressbar"/>
+                                <field name="remaining_hours" widget="float_time"/>
+                                <field name="date_deadline"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+                
+
+
+                <field name="type_id" position="replace">
+                    <field name="type_id" widget="selection" readonly="1" invisible="1"/>
+                </field>
+
+                <button name="prev_type" position="replace">
+                    <button name="prev_type" string="Previous" type="object" icon="gtk-go-back" help="Change to Previous Stage" invisible="1"/>
+                </button>
+
+                <button name="next_type" position="replace">
+                    <button name="next_type" string="Next" type="object" icon="gtk-go-forward" help="Change to Next Stage" invisible="1"/>
+                </button>
+
+                <button string="Delegate" position="replace">
+                    <button groups="base.group_extended" name="%(project.action_project_task_delegate)d" states="pending,open,draft" string="Delegate" type="action" icon="terp-personal"
+                    invisible="1"/>
+                </button>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_planning_task_tree">
+            <field name="name">project.planning.task.tree</field>
+            <field name="model">project.task</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="order_number" attrs="{'invisible':[('template','=',1)]}"/>
+                    <field name="range_code"/>
+                </field>
+                <field name="date_deadline" position="after">
+                    <field name="category_id" invisible="1"/>
+                    <field name="template" invisible="1"/>
+                </field>
+                <field name="planned_hours" position="replace"/>
+                <field name="progress" position="replace"/>
+                <field name="date_deadline" position="replace"/>
+                <field name="remaining_hours" position="replace"/>
+                <field name="state" position="replace"/>
+                <field name="user_id" position="replace"/>
+                <field name="type_id" position="replace"/>
+                <button name="next_type" position="replace"/>
+                <button name="do_open" position="replace"/>
+                <button name="%(project.action_project_task_delegate)d" position="replace"/>
+                <button name="action_close" position="replace"/>
+
+                <field name="project_id" position="before">
+                    <field name="progress" widget="progressbar" invisible="context.get('set_visible',False)"/>
+                    <field name="date_deadline"/>
+                    <field name="planned_hours" widget="float_time" invisible="context.get('set_visible',False)"/>
+                    <field name="remaining_hours" widget="float_time" sum="Remaining Hours" on_change="onchange_remaining(remaining_hours,planned_hours)" invisible="context.get('set_visible',False)"/>
+                </field>
+                <field name="project_id" position="after">
+                    <field name="task_nature"/>
+                    <field name="state"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="type_id" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_planning_task_search_form">
+            <field name="name">project.planning.task.search.form</field>
+            <field name="model">project.task</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="project.view_task_search_form"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="order_number"/>
+                    <field name="range_code"/>
+                </field>
+                <group string="Group By..." position="inside">
+                    <separator orientation="vertical"/>
+                    <filter string="Category" name="group_category_id" icon="terp-stage" domain="[]" context="{'group_by':'category_id'}"/>
+                </group>
+                <filter name="group_stage_id" position="replace"/>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_category_tree">
+            <field name="name">project.task.category.tree</field>
+            <field name="model">project.task.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Task Categories">
+                    <field name="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_category_form">
+            <field name="name">project.task.category.form</field>
+            <field name="model">project.task.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Task Category">
+                    <field name="name"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_template_tree_view">
+            <field name="name">project.task.template.tree</field>
+            <field name="model">project.task</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Maintenance Ranges">
+                    <field name="range_code"/>
+                    <field name="name"/>
+                    <field name="task_periodicy"/>
+                    <field name="category_id" string="Set"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="project_task_template_search_view">
+            <field name="name">project.task.template.search</field>
+            <field name="model">project.task</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Maintenance Ranges">
+                    <field name="range_code"/>
+                    <field name="name"/>
+                    <field name="task_periodicy"/>
+                    <newline/>
+                    <group string="Group By..." expand="0">
+                        <filter string="Periodicy" name="group_periodicy" 
+                            icon="terp-go-month" domain="[]" 
+                            context="{'group_by':'task_periodicy'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_view_template_task" model="ir.actions.act_window">
+            <field name="name">Ranges</field>
+            <field name="res_model">project.task</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="filter"/>
+            <field name="view_id" eval="project_task_template_tree_view"/>
+            <field name="domain">[('template','=',1)]</field>
+            <field name="search_view_id" ref="project_task_template_search_view"/>
+        </record>
+
+        <record id="project.action_view_task" model="ir.actions.act_window">
+            <field name="domain">[('template','=',0)]</field>
+        </record>
+
+        <record id="action_view_task_category" model="ir.actions.act_window">
+            <field name="name">Task Categories</field>
+            <field name="res_model">project.task.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_task_config" name="Task and ranges" parent="project.menu_definitions" sequence="1"/>
+
+        <menuitem id="menu_task_category"
+            action="action_view_task_category"
+            parent="menu_task_config" sequence="1"
+            groups="project.group_project_manager"/>
+
+        <menuitem action="action_view_template_task" 
+            id="menu_action_view_template_task" 
+            parent="menu_task_config" sequence="2"
+            groups="project.group_project_manager"/>
+
+        <record id="project.act_project_project_2_project_task_all" model="ir.actions.act_window">
+            <field name="name">Ordenes de trabajo</field>
+            <field name="res_model">project.task</field>
+            <field name="src_model">project.project</field>
+            <field name="domain">[('project_id','=',active_id)]</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar,graph</field>
+            <field name="view_id" ref="project_planning_task_tree"/>
+            <field name="search_view_id" ref="project_planning_task_search_form"/>
+        </record>
+
+        <act_window
+        domain="[('invoice_id','=',False),('to_invoice','&lt;&gt;',False)]"
+        context="{'search_default_account_id': [active_id], 'default_account_id': active_id,
+        'search_default_user_id': False}"
+        id="hr_timesheet_invoice.act_acc_analytic_acc_2_report_acc_analytic_line_to_invoice"
+        name="Lines to Invoice"
+        res_model="account.analytic.line"
+        src_model="account.analytic.account"/>
+        
+    </data>
+</openerp>

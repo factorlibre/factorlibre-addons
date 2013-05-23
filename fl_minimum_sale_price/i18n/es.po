@@ -1,0 +1,108 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* fl_minimum_sale_price
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-04 13:30+0000\n"
+"PO-Revision-Date: 2012-06-04 15:35+0100\n"
+"Last-Translator: Hugo Santos <hugosantosred@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: fl_minimum_sale_price
+#: sql_constraint:sale.order:0
+msgid "Order Reference must be unique per Company!"
+msgstr "¡La referencia del pedido debe ser única por Compañia!"
+
+#. module: fl_minimum_sale_price
+#: view:product.minimum.pricelist:0
+msgid "Product Minimum Price"
+msgstr "Precio mínimo por producto"
+
+#. module: fl_minimum_sale_price
+#: code:addons/fl_minimum_sale_price/sale.py:78
+#, python-format
+msgid "Error !"
+msgstr "Error !"
+
+#. module: fl_minimum_sale_price
+#: field:product.minimum.pricelist,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: fl_minimum_sale_price
+#: field:product.minimum.pricelist,priority:0
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: fl_minimum_sale_price
+#: field:product.minimum.pricelist,product_category_ids:0
+#: field:product.minimum.pricelist,product_ids:0
+msgid "unknown"
+msgstr "unknown"
+
+#. module: fl_minimum_sale_price
+#: model:ir.actions.act_window,name:fl_minimum_sale_price.minimum_price_action
+#: model:ir.ui.menu,name:fl_minimum_sale_price.config_minimum_pricelist
+msgid "Product Minimum Price list"
+msgstr "Lista de precio mínimo por producto"
+
+#. module: fl_minimum_sale_price
+#: field:sale.order,force_price:0
+msgid "Force Price?"
+msgstr "¿Forzar Precio?"
+
+#. module: fl_minimum_sale_price
+#: field:sale.order,minimum_price:0
+#: field:sale.order.line,minimum_price:0
+msgid "Minimum Price?"
+msgstr "¿Precio Mínimo?"
+
+#. module: fl_minimum_sale_price
+#: model:ir.model,name:fl_minimum_sale_price.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: fl_minimum_sale_price
+#: view:product.minimum.pricelist:0
+msgid "Products"
+msgstr "Productos"
+
+#. module: fl_minimum_sale_price
+#: model:ir.model,name:fl_minimum_sale_price.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: fl_minimum_sale_price
+#: field:product.minimum.pricelist,minimum_percent:0
+msgid "Minimum %"
+msgstr "Mínimo %"
+
+#. module: fl_minimum_sale_price
+#: code:addons/fl_minimum_sale_price/sale.py:114
+#, python-format
+msgid "Minimum price not reached"
+msgstr "Precio mínimo no alcanzado"
+
+#. module: fl_minimum_sale_price
+#: code:addons/fl_minimum_sale_price/sale.py:79
+#, python-format
+msgid "You cannot confirm a sale order which has lines that not reach the minimum price."
+msgstr "No puede confirmar un pedido de venta que tenga líneas que no llegan al precio mínimo de venta."
+
+#. module: fl_minimum_sale_price
+#: view:product.minimum.pricelist:0
+msgid "Categories"
+msgstr "Categorías"
+
+#. module: fl_minimum_sale_price
+#: model:ir.model,name:fl_minimum_sale_price.model_product_minimum_pricelist
+msgid "product.minimum.pricelist"
+msgstr "product.minimum.pricelist"
+

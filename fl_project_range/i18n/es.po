@@ -1,0 +1,703 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#   * fl_project_range
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-08 10:33+0000\n"
+"PO-Revision-Date: 2013-02-08 10:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_periodicy:0
+#: selection:project.task,task_periodicy:0
+msgid "Monthly"
+msgstr "Mensual"
+
+#. module: fl_project_range
+#: field:project.task,user_ids:0
+msgid "Workers"
+msgstr "Operarios"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Task Materials"
+msgstr "Materiales"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Group By..."
+msgstr "Agrupar por..."
+
+#. module: fl_project_range
+#: view:project.range:0
+msgid "Planification"
+msgstr "Planificación"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_fleet_vehicles
+msgid "Holds records of Vehicles"
+msgstr "Guarda los registros de los Vehículos"
+
+#. module: fl_project_range
+#: field:project.range.task,vehicle_id:0
+#: field:project.task,vehicle_id:0
+msgid "Vehicle"
+msgstr "Vehículo"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Resume"
+msgstr "Resumen"
+
+#. module: fl_project_range
+#: model:ir.actions.report.xml,name:fl_project_range.task_work_order_operator_report_id
+msgid "Informe OT Operario"
+msgstr "Informe OT Operario"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Parent Tasks"
+msgstr "Tareas padre"
+
+#. module: fl_project_range
+#: view:project.range:0
+#: view:project.range.task:0
+#: view:project.task:0
+msgid "Object"
+msgstr "Object"
+
+#. module: fl_project_range
+#: model:ir.actions.act_window,name:fl_project_range.action_view_template_task
+#: model:ir.ui.menu,name:fl_project_range.menu_action_view_template_task
+msgid "Ranges"
+msgstr "Gamas"
+
+#. module: fl_project_range
+#: field:project.range,allowed_facility_ids:0
+msgid "Allowed Facilities"
+msgstr "Allowed Facilities"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_periodicy:0
+#: selection:project.task,task_periodicy:0
+msgid "Biweekly"
+msgstr "Quincenal"
+
+#. module: fl_project_range
+#: field:project.range,plan_task_ids:0
+msgid "Task to plan"
+msgstr "Tarea A planificar"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: fl_project_range
+#: view:project.task:0
+#: view:vehicle.part.component:0
+#: field:vehicle.part.component,notes:0
+#: view:vehicle.part.set:0
+#: field:vehicle.part.set,notes:0
+msgid "Notes"
+msgstr "Notas"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_periodicy:0
+#: selection:project.task,task_periodicy:0
+msgid "Annual"
+msgstr "Anual"
+
+#. module: fl_project_range
+#: field:project.range,project_id:0
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Start Task"
+msgstr "Iniciar tarea"
+
+#. module: fl_project_range
+#: view:project.range:0
+#: view:project.range.task:0
+#: view:project.task:0
+msgid "Set"
+msgstr "Set"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_project_range_task
+msgid "project.range.task"
+msgstr "project.range.task"
+
+#. module: fl_project_range
+#: view:vehicle.part.set:0
+#: field:vehicle.part.set,component_ids:0
+msgid "Components"
+msgstr "Componentes"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Technical Manager"
+msgstr "Responsable Técnico"
+
+#. module: fl_project_range
+#: selection:project.task,task_nature:0
+msgid "Preventive"
+msgstr "Preventivo"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Change to Next Stage"
+msgstr "Cambiar a etapa siguiente"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_periodicy:0
+#: selection:project.task,task_periodicy:0
+msgid "Bimonthly"
+msgstr "Bimensual"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_periodicy:0
+#: selection:project.task,task_periodicy:0
+msgid "Quartery"
+msgstr "Trimestral"
+
+#. module: fl_project_range
+#: field:project.range,facility_id:0
+msgid "Facility"
+msgstr "Instalación"
+
+#. module: fl_project_range
+#: field:project.range.task,part_set_id:0
+#: field:project.task,part_set_id:0
+#: field:vehicle.part.component,part_set_id:0
+msgid "Part Set"
+msgstr "Juego de piezas"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_project_task_category
+msgid "project.task.category"
+msgstr "project.task.category"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Extra Info"
+msgstr "Información extra"
+
+#. module: fl_project_range
+#: field:project.range.task,planned_hours:0
+msgid "Planned Hours"
+msgstr "Horas Planificadas"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Previous"
+msgstr "Anterior"
+
+#. module: fl_project_range
+#: field:project.task,order_number:0
+msgid "Order No."
+msgstr "N. Orden"
+
+#. module: fl_project_range
+#: model:ir.ui.menu,name:fl_project_range.menu_task_config
+msgid "Task and ranges"
+msgstr "Tareas y gamas"
+
+#. module: fl_project_range
+#: selection:project.range,state:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: fl_project_range
+#: view:project.task.period:0
+msgid "Task Period"
+msgstr "Periodo"
+
+#. module: fl_project_range
+#: view:project.range:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Next"
+msgstr "Siguiente"
+
+#. module: fl_project_range
+#: view:project.range:0
+#: view:project.range.task:0
+msgid "Job Description"
+msgstr "Job Description"
+
+#. module: fl_project_range
+#: field:project.range,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Descriptive data"
+msgstr "Datos Descriptivos"
+
+#. module: fl_project_range
+#: field:project.range.task,task_type:0
+#: field:project.task,task_type:0
+msgid "Type"
+msgstr "Tipo"
+
+#. module: fl_project_range
+#: field:project.task.category,name:0
+#: field:project.task.period,name:0
+#: field:vehicle.part.component,name:0
+#: field:vehicle.part.set,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Reevaluate"
+msgstr "Re-evaluar"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Miscelleanous"
+msgstr "Varios"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Task Work"
+msgstr "Trabajo de tarea"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Hours"
+msgstr "Horas"
+
+#. module: fl_project_range
+#: view:project.task.period:0
+msgid "Task Periods"
+msgstr "Periodos de Tareas"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_execution:0
+#: selection:project.task,task_execution:0
+msgid "External"
+msgstr "Externa"
+
+#. module: fl_project_range
+#: field:project.task,tmanager_user_ids:0
+msgid "Technical Managers"
+msgstr "Technical Managers"
+
+#. module: fl_project_range
+#: view:project.task:0
+#: field:project.task,extraordinary_expenses_ids:0
+msgid "Extraordinary Expenses"
+msgstr "Gastos Extraordinarios"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Dates"
+msgstr "Fechas"
+
+#. module: fl_project_range
+#: field:project.range.task,official:0
+#: field:project.task,official:0
+msgid "Official"
+msgstr "Oficial"
+
+#. module: fl_project_range
+#: field:project.range.task,range_id:0
+#: field:project.task,project_range_id:0
+msgid "Range"
+msgstr "Gama"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Materials"
+msgstr "Materiales"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Delegate"
+msgstr "Delegar"
+
+#. module: fl_project_range
+#: code:addons/fl_project_range/project.py:65
+#, python-format
+msgid "The related project is %s. Task state can't be changed."
+msgstr "El proyecto relacionado se encuentra %s. El estado de la tarea no puede cambiarse."
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Change to Previous Stage"
+msgstr "Cambiar a etapa anterior"
+
+#. module: fl_project_range
+#: view:vehicle.part.component:0
+msgid "Vehicle Components"
+msgstr "Componentes de vehículo"
+
+#. module: fl_project_range
+#: field:project.range,allowed_vehicle_ids:0
+msgid "Allowed Vehicles"
+msgstr "Allowed Vehicles"
+
+#. module: fl_project_range
+#: selection:project.task,task_nature:0
+msgid "Corrective"
+msgstr "Correctiva"
+
+#. module: fl_project_range
+#: field:project.range,name:0
+msgid "Planning No."
+msgstr "N. Planificación"
+
+#. module: fl_project_range
+#: view:vehicle.part.set:0
+msgid "Vehicle Part Sets"
+msgstr "Juegos de piezas"
+
+#. module: fl_project_range
+#: selection:project.range,plan_duration_type:0
+#: field:project.range,years:0
+msgid "Years"
+msgstr "Años"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Maintenance Ranges"
+msgstr "Gamas de mantenimiento"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Planning Range"
+msgstr "Planificación de gamas"
+
+#. module: fl_project_range
+#: constraint:project.task:0
+msgid "Error ! You cannot create recursive tasks."
+msgstr "¡Error! No puede crear tareas recursivas."
+
+#. module: fl_project_range
+#: selection:project.range.task,task_periodicy:0
+#: selection:project.task,task_periodicy:0
+msgid "Weekly"
+msgstr "Semanal"
+
+#. module: fl_project_range
+#: view:project.task.category:0
+msgid "Task Category"
+msgstr "Categoría de tarea"
+
+#. module: fl_project_range
+#: field:project.range,company_id:0
+msgid "Company"
+msgstr "Compañía"
+
+#. module: fl_project_range
+#: selection:project.task,task_action:0
+msgid "Planned"
+msgstr "Planificada"
+
+#. module: fl_project_range
+#: field:project.range.task,category_id:0
+#: field:project.range.task,task_category_id:0
+#: view:project.task:0
+#: field:project.task,category_id:0
+msgid "Category"
+msgstr "Categoría"
+
+#. module: fl_project_range
+#: sql_constraint:fleet.vehicles:0
+msgid "The registration no of the vehicle must be unique !"
+msgstr "The registration no of the vehicle must be unique !"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Delegated tasks"
+msgstr "Tareas delegadas"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_vehicle_part_component
+msgid "vehicle.part.component"
+msgstr "vehicle.part.component"
+
+#. module: fl_project_range
+#: field:project.range.task,note:0
+msgid "Note"
+msgstr "Notas"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_execution:0
+#: selection:project.task,task_execution:0
+msgid "Internal"
+msgstr "Interna"
+
+#. module: fl_project_range
+#: selection:project.range,state:0
+#: view:project.task:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: fl_project_range
+#: view:project.range:0
+msgid "Project Range Planners"
+msgstr "Planificador de Gama"
+
+#. module: fl_project_range
+#: view:project.range:0
+#: view:project.range.task:0
+msgid "Project Range tasks"
+msgstr "Project Range tasks"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Identificative Data"
+msgstr "Datos Identificativos"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_type:0
+#: selection:project.task,task_type:0
+msgid "Especial"
+msgstr "Especial"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Reactivate"
+msgstr "Reactivar"
+
+#. module: fl_project_range
+#: field:project.task,task_nature:0
+msgid "Nature"
+msgstr "Naturaleza"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Operators"
+msgstr "Operarios"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Vehicle Ref."
+msgstr "Ref. Vehículo"
+
+#. module: fl_project_range
+#: field:project.range,plan_duration_type:0
+msgid "Plan Duration type"
+msgstr "Planificación de Duración"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_project_task_period
+msgid "project.task.period"
+msgstr "project.task.period"
+
+#. module: fl_project_range
+#: field:project.range.task,task_execution:0
+#: field:project.task,task_execution:0
+msgid "Execution"
+msgstr "Ejecución"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Delegations History"
+msgstr "Histórico de delegaciones"
+
+#. module: fl_project_range
+#: field:project.range,months:0
+#: selection:project.range,plan_duration_type:0
+msgid "Months"
+msgstr "Meses"
+
+#. module: fl_project_range
+#: field:project.range,date_start:0
+msgid "Starting Date"
+msgstr "Fecha de inicio"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: fl_project_range
+#: code:addons/fl_project_range/project.py:65
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: fl_project_range
+#: field:project.task,task_action:0
+msgid "Action"
+msgstr "Acción"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: fl_project_range
+#: field:project.task.period,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: fl_project_range
+#: model:ir.actions.act_window,name:fl_project_range.action_view_task_category
+#: model:ir.ui.menu,name:fl_project_range.menu_task_category
+#: view:project.task.category:0
+msgid "Task Categories"
+msgstr "Categorías de tarea"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_type:0
+#: selection:project.task,task_type:0
+msgid "Periodical"
+msgstr "Periodica"
+
+#. module: fl_project_range
+#: view:project.range:0
+#: selection:project.range,state:0
+#: view:project.task:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: fl_project_range
+#: view:project.range:0
+#: view:project.range.task:0
+#: view:project.task:0
+msgid "Unit"
+msgstr "Unidad"
+
+#. module: fl_project_range
+#: field:project.range.task,task_id:0
+#: field:project.task,range_code:0
+msgid "Range Code"
+msgstr "Codigo de Gama"
+
+#. module: fl_project_range
+#: view:project.range:0
+#: view:project.task:0
+msgid "Information"
+msgstr "Información"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Remaining Hours"
+msgstr "Horas restantes"
+
+#. module: fl_project_range
+#: constraint:project.task:0
+msgid "Error ! Task end-date must be greater then task start-date"
+msgstr "¡ Error ! La fecha final de la tarea debe ser mayor que la fecha de inicio"
+
+#. module: fl_project_range
+#: field:project.task.period,repeat:0
+msgid "Times in a Year"
+msgstr "Veces al año"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_project_range
+msgid "project.range"
+msgstr "project.range"
+
+#. module: fl_project_range
+#: field:project.range.task,task_periodicy:0
+#: view:project.task:0
+#: field:project.task,task_periodicy:0
+msgid "Periodicy"
+msgstr "Periodicidad"
+
+#. module: fl_project_range
+#: field:project.range.task,name:0
+#: view:project.task:0
+msgid "Description"
+msgstr "Descripción"
+
+#. module: fl_project_range
+#: field:project.range.task,part_component_id:0
+#: field:project.task,part_component_id:0
+msgid "Component"
+msgstr "Componente"
+
+#. module: fl_project_range
+#: model:ir.actions.report.xml,name:fl_project_range.task_work_order_report_id
+msgid "Informe OT"
+msgstr "Informe OT"
+
+#. module: fl_project_range
+#: field:fleet.vehicles,partner_id:0
+#: field:project.range,partner_id:0
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: fl_project_range
+#: model:ir.actions.act_window,name:fl_project_range.action_view_vehicle_part_component
+#: model:ir.ui.menu,name:fl_project_range.menu_vehicle_part_component_config
+#: view:vehicle.part.component:0
+msgid "Vehicle Component"
+msgstr "Componente de vehículo"
+
+#. module: fl_project_range
+#: model:ir.actions.act_window,name:fl_project_range.action_view_project_range
+#: model:ir.ui.menu,name:fl_project_range.project_range_menu
+#: view:project.range:0
+msgid "Project Range Planner"
+msgstr "Planificador de Gamas de proyecto"
+
+#. module: fl_project_range
+#: selection:project.task,task_action:0
+msgid "Not Planned"
+msgstr "No Planificada"
+
+#. module: fl_project_range
+#: model:ir.actions.act_window,name:fl_project_range.action_view_vehicle_part_set
+#: model:ir.ui.menu,name:fl_project_range.menu_vehicle_part_set_config
+#: view:vehicle.part.set:0
+msgid "Vehicle Part Set"
+msgstr "Juego de Piezas de Vehículo"
+
+#. module: fl_project_range
+#: model:ir.model,name:fl_project_range.model_vehicle_part_set
+msgid "vehicle.part.set"
+msgstr "vehicle.part.set"
+
+#. module: fl_project_range
+#: view:project.task:0
+msgid "Spent Hours"
+msgstr "Horas consumidas"
+
+#. module: fl_project_range
+#: field:project.task,template:0
+msgid "Template?"
+msgstr "¿Plantilla?"
+
+#. module: fl_project_range
+#: selection:project.range.task,task_periodicy:0
+#: selection:project.task,task_periodicy:0
+msgid "Biannual"
+msgstr "Semestral"
+
+#. module: fl_project_range
+#: model:ir.actions.report.xml,name:fl_project_range.task_range_report_id
+msgid "Informe Gama"
+msgstr "Informe Gama"
+

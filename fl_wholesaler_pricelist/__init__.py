@@ -1,0 +1,2 @@
+import wholesaler_pricelist
+import product

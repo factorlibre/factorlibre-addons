@@ -1,0 +1,195 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#   * fl_efficiency_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-19 10:21+0000\n"
+"PO-Revision-Date: 2013-03-19 10:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fl_efficiency_report
+#: view:efficiency.report.wizard:0
+msgid "Calculate"
+msgstr "Calcular"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.wizard,seller_id:0
+#: field:report.product.efficiency,seller_id:0
+msgid "Seller"
+msgstr "Proveedor"
+
+#. module: fl_efficiency_report
+#: view:efficiency.report.line:0
+#: view:report.product.efficiency:0
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.wizard,date_to:0
+msgid "To Date"
+msgstr "Hasta"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,move_in_qty:0
+msgid "Move In Qty"
+msgstr "Ud. Recibidas"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.wizard,date_from:0
+msgid "From Date"
+msgstr "Desde"
+
+#. module: fl_efficiency_report
+#: field:report.product.efficiency,product_tmpl_id:0
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: fl_efficiency_report
+#: view:efficiency.report.line:0
+#: field:efficiency.report.line,seller_id:0
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,efficiency:0
+msgid "Efficiency %"
+msgstr "Eficacia %"
+
+#. module: fl_efficiency_report
+#: code:addons/fl_efficiency_report/report/efficiency_report_wizard.py:184
+#: view:efficiency.report.line:0
+#: view:efficiency.report.wizard:0
+#: model:ir.actions.act_window,name:fl_efficiency_report.efficiency_report_wizard_action
+#: model:ir.actions.act_window,name:fl_efficiency_report.report_product_efficiency_action
+#: model:ir.ui.menu,name:fl_efficiency_report.report_product_efficiency_menu
+#: view:report.product.efficiency:0
+#, python-format
+msgid "Efficiency Report"
+msgstr "Informe de Eficacia"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,stock:0
+msgid "Stock"
+msgstr "Stock"
+
+#. module: fl_efficiency_report
+#: model:ir.model,name:fl_efficiency_report.model_efficiency_report_wizard
+msgid "efficiency.report.wizard"
+msgstr "efficiency.report.wizard"
+
+#. module: fl_efficiency_report
+#: view:efficiency.report.line:0
+#: field:efficiency.report.line,product_id:0
+#: view:report.product.efficiency:0
+#: field:report.product.efficiency,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: fl_efficiency_report
+#: model:ir.model,name:fl_efficiency_report.model_report_product_efficiency
+msgid "report.product.efficiency"
+msgstr "report.product.efficiency"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.wizard,category_id:0
+msgid "Season"
+msgstr "Temporada"
+
+#. module: fl_efficiency_report
+#: view:report.product.efficiency:0
+#: field:report.product.efficiency,company_id:0
+msgid "Company"
+msgstr "Compañía"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,buy_qty:0
+#: field:report.product.efficiency,buy_qty:0
+msgid "Buy Qty"
+msgstr "Ud. Compradas"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,list_price:0
+msgid "List Price"
+msgstr "Precio Venta"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,move_efficiency:0
+msgid "Move Efficiency %"
+msgstr "Eficacia de Movimientos %"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,purchase_amount:0
+#: field:report.product.efficiency,purchase_amount:0
+msgid "Purchase Amount"
+msgstr "Precio Total Comprado"
+
+#. module: fl_efficiency_report
+#: field:report.product.efficiency,efficiency:0
+msgid "Efficiency"
+msgstr "Eficacia"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,sale_amount:0
+#: field:report.product.efficiency,sale_amount:0
+msgid "Sale Amount"
+msgstr "Precio Total Vendido"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,standard_price:0
+msgid "Standard Price"
+msgstr "Precio Compra"
+
+#. module: fl_efficiency_report
+#: view:report.product.efficiency:0
+#: field:report.product.efficiency,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: fl_efficiency_report
+#: model:ir.model,name:fl_efficiency_report.model_efficiency_report_line
+msgid "efficiency.report.line"
+msgstr "efficiency.report.line"
+
+#. module: fl_efficiency_report
+#: view:report.product.efficiency:0
+msgid "Efficiency Report Search"
+msgstr "Busqueda Informe Eficacia"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,sell_qty:0
+#: field:report.product.efficiency,sell_qty:0
+msgid "Sell Qty"
+msgstr "Ud. Vendidas"
+
+#. module: fl_efficiency_report
+#: view:efficiency.report.line:0
+#: field:efficiency.report.line,product_template_id:0
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,move_out_qty:0
+msgid "Move out Qty"
+msgstr "Ud. Enviadas"
+
+#. module: fl_efficiency_report
+#: field:efficiency.report.line,buy_total_qty:0
+msgid "Total Purchased"
+msgstr "Total Comprado"
+
+#. module: fl_efficiency_report
+#: view:efficiency.report.line:0
+#: field:efficiency.report.line,warehouse_id:0
+#: view:report.product.efficiency:0
+#: field:report.product.efficiency,warehouse_id:0
+msgid "Warehouse"
+msgstr "Almacen"
+

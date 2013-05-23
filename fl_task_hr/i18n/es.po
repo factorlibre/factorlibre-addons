@@ -1,0 +1,510 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#   * task_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-29 09:38+0000\n"
+"PO-Revision-Date: 2012-12-19 14:09+0100\n"
+"Last-Translator: Hugo Santos <hugosantosred@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+msgid "Work Periods"
+msgstr "Periodos"
+
+#. module: task_hr
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Selected"
+msgstr "Seleccionado"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: task_hr
+#: model:ir.model,name:task_hr.model_multi_task_employee_period
+msgid "multi.task.employee.period"
+msgstr "multi.task.employee.period"
+
+#. module: task_hr
+#: model:ir.model,name:task_hr.model_multi_task_employee
+msgid "multi.task.employee"
+msgstr "multi.task.employee"
+
+#. module: task_hr
+#: constraint:project.task:0
+msgid "Error ! You cannot create recursive tasks."
+msgstr "¡Error! No puede crear tareas recursivas."
+
+#. module: task_hr
+#: field:project.task,dificulty:0
+msgid "Dificulty"
+msgstr "Dificultad"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: view:project.task.employee:0
+msgid "Work Info"
+msgstr "Información de trabajo"
+
+#. module: task_hr
+#: model:ir.model,name:task_hr.model_project_task
+#: field:project.task.employee,task_id:0
+msgid "Task"
+msgstr "Cuadrante"
+
+#. module: task_hr
+#: field:project.task.employee,employee_phone:0
+msgid "Mobile Phone"
+msgstr "Teléfono Móvil"
+
+#. module: task_hr
+#: code:addons/task_hr/wizard/multi_task_employee.py:52
+#, python-format
+msgid "Warning !"
+msgstr "¡Aviso!"
+
+#. module: task_hr
+#: field:project.task.employee,self_employed:0
+msgid "Self Employeed"
+msgstr "Autónomo"
+
+#. module: task_hr
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Contract Pending"
+msgstr "Contrato Pendiente"
+
+#. module: task_hr
+#: field:multi.task.employee,coordinator:0
+#: view:project.task.employee:0
+#: field:project.task.employee,coordinator:0
+msgid "Coordinator"
+msgstr "Coordinador"
+
+#. module: task_hr
+#: code:addons/task_hr/task.py:372
+#: code:addons/task_hr/wizard/multi_task_employee.py:109
+#, python-format
+msgid "Warning"
+msgstr "Aviso"
+
+#. module: task_hr
+#: field:project.task.employee,subtotal_km:0
+msgid "Subtotal (Km)"
+msgstr "Subtotal (Km)"
+
+#. module: task_hr
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Discharged"
+msgstr "Dado de alta"
+
+#. module: task_hr
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+msgid "Create"
+msgstr "Crear"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "State"
+msgstr "Estado"
+
+#. module: task_hr
+#: model:ir.actions.act_window,name:task_hr.act_hr_employee_2_project_task_employee
+#: model:ir.actions.act_window,name:task_hr.project_task_employee_action
+#: model:ir.ui.menu,name:task_hr.menu_project_task_employee
+msgid "Employee Lines"
+msgstr "Líneas de empleados"
+
+#. module: task_hr
+#: view:project.task:0
+#: view:project.task.employee:0
+#: field:project.task.employee,employee_id:0
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: task_hr
+#: field:project.task.employee,price_km:0
+msgid "Price per Km"
+msgstr "Precio por Km"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "Discharge Employees"
+msgstr "Dar de alta"
+
+#. module: task_hr
+#: field:project.task.employee,create_date:0
+msgid "Creation Date"
+msgstr "Fecha de creación"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: field:multi.task.employee,work_address:0
+#: view:project.task.employee:0
+#: field:project.task.employee,work_address:0
+msgid "Work Address"
+msgstr "Dirección de trabajo"
+
+#. module: task_hr
+#: field:project.task.employee,hours:0
+msgid "Hours"
+msgstr "Horas"
+
+#. module: task_hr
+#: field:project.task.employee,state:0
+msgid "state"
+msgstr "Estado"
+
+#. module: task_hr
+#: code:addons/task_hr/task.py:345
+#, python-format
+msgid "Invalid action !"
+msgstr "Acción no válida"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Discharge"
+msgstr "Dar de alta"
+
+#. module: task_hr
+#: view:project.task:0
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Worked"
+msgstr "Trabajado"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "Assigned To"
+msgstr "Asignada A"
+
+#. module: task_hr
+#: model:ir.actions.act_window,name:task_hr.multi_task_employee_action
+#: view:multi.task.employee:0
+msgid "Create Employee Tasks"
+msgstr "Crear líneas de empleado"
+
+#. module: task_hr
+#: field:project.task.employee,km:0
+msgid "Km."
+msgstr "Km."
+
+#. module: task_hr
+#: code:addons/task_hr/wizard/multi_task_employee.py:58
+#, python-format
+msgid "Task not found!. Please save the record and try again"
+msgstr "No se ha encontrado la tarea!. Por favor guarde el registro e intelo de nuevo"
+
+#. module: task_hr
+#: field:project.task.employee,other_cost:0
+msgid "Other Cost"
+msgstr "Otros"
+
+#. module: task_hr
+#: code:addons/task_hr/task.py:373
+#: code:addons/task_hr/wizard/multi_task_employee.py:110
+#, python-format
+msgid "Difference between ending date and starting date not permitted"
+msgstr "La diferencia entre la fecha de inicio y la fecha de fin no es válida"
+
+#. module: task_hr
+#: field:employee.work.period,start_date:0
+#: field:multi.task.employee.period,start_date:0
+#: field:project.task.employee,start_date:0
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: field:multi.task.employee,work_activity:0
+#: view:project.task.employee:0
+#: field:project.task.employee,work_activity:0
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: task_hr
+#: selection:project.task.employee,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Pending"
+msgstr "Pendiente de alta"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "My Managed Tasks"
+msgstr "Cuentas en las que soy responsable"
+
+#. module: task_hr
+#: field:employee.work.period,employee_task_id:0
+#: field:multi.task.employee.period,multi_task_id:0
+msgid "unknown"
+msgstr "Desconocido"
+
+#. module: task_hr
+#: view:project.task:0
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: task_hr
+#: field:project.task.employee,observations:0
+msgid "observations"
+msgstr "Observaciones"
+
+#. module: task_hr
+#: code:addons/task_hr/wizard/multi_task_employee.py:52
+#, python-format
+msgid "You can not add employees if task is not open"
+msgstr "No puede añadir empleados si la tarea no se encuentra abierta"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Pay"
+msgstr "Pagar"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Compute"
+msgstr "Calcular"
+
+#. module: task_hr
+#: field:project.task.employee,price_extra_hour:0
+msgid "Price per Extra Hour"
+msgstr "Precio por hora extra"
+
+#. module: task_hr
+#: field:project.task.employee,subtotal_diet:0
+msgid "Subtotal (Diets)"
+msgstr "Subtotal (Dietas)"
+
+#. module: task_hr
+#: field:project.task.employee,price_hour:0
+msgid "Price Per Hour"
+msgstr "Precio por hora"
+
+#. module: task_hr
+#: code:addons/task_hr/wizard/multi_task_employee.py:58
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: task_hr
+#: field:project.task.employee,subtotal_extra_hour:0
+msgid "Subtotal (Extra Hour)"
+msgstr "Subtotal (Hora extra)"
+
+#. module: task_hr
+#: field:project.task,user_ids:0
+msgid "Assigned to"
+msgstr "Asignada A"
+
+#. module: task_hr
+#: view:employee.work.period:0
+msgid "Period"
+msgstr "Periodo"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "Task Manager"
+msgstr "Ejecutiva de Cuentas"
+
+#. module: task_hr
+#: view:employee.work.period:0
+#: field:multi.task.employee,work_period_ids:0
+#: field:project.task.employee,work_period_ids:0
+msgid "Periods"
+msgstr "Periodos"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: view:project.task.employee:0
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "Task without Manager"
+msgstr "Cuentas sin responsable asignado"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "Payment Pending"
+msgstr "Pendiente de pago"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "Information"
+msgstr "Información"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Search Employee"
+msgstr "Buscar Empleados"
+
+#. module: task_hr
+#: field:project.task.employee,diets:0
+msgid "Diets"
+msgstr "Dietas"
+
+#. module: task_hr
+#: constraint:project.task:0
+msgid "Error ! Task end-date must be greater then task start-date"
+msgstr "¡ Error ! La fecha final de la tarea debe ser mayor que la fecha de inicio"
+
+#. module: task_hr
+#: view:project.task:0
+msgid "My Assigned Tasks"
+msgstr "Mis tareas asignadas"
+
+#. module: task_hr
+#: field:multi.task.employee,price_hour:0
+msgid "Price per hour"
+msgstr "Precio por hora"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: field:multi.task.employee,uniform:0
+#: view:project.task.employee:0
+#: field:project.task.employee,uniform:0
+msgid "Uniform"
+msgstr "Uniforme"
+
+#. module: task_hr
+#: field:project.task.employee,employee_mail:0
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: task_hr
+#: model:ir.model,name:task_hr.model_employee_work_period
+msgid "employee.work.period"
+msgstr "employee.work.period"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Mark as Worked"
+msgstr "Trabajado"
+
+#. module: task_hr
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Void"
+msgstr "Anulado"
+
+#. module: task_hr
+#: view:project.task.employee:0
+msgid "Task/Quadrant"
+msgstr "Tarea/Cuadrante"
+
+#. module: task_hr
+#: field:project.task.employee,extra_hour:0
+msgid "Extra Hour"
+msgstr "Hora extra"
+
+#. module: task_hr
+#: field:multi.task.employee,instructions:0
+#: field:project.task.employee,instructions:0
+msgid "Instructions"
+msgstr "Instrucciones"
+
+#. module: task_hr
+#: field:employee.work.period,end_date:0
+#: field:multi.task.employee.period,end_date:0
+#: field:project.task.employee,end_date:0
+msgid "End Date"
+msgstr "Fecha de fin"
+
+#. module: task_hr
+#: field:multi.task.employee,price_diet:0
+#: field:project.task.employee,price_diet:0
+msgid "Price per diet"
+msgstr "Precio por dieta"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: field:multi.task.employee,employee_ids:0
+#: field:project.task,task_employee_ids:0
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: task_hr
+#: model:ir.model,name:task_hr.model_project_task_employee
+msgid "project.task.employee"
+msgstr "project.task.employee"
+
+#. module: task_hr
+#: field:multi.task.employee,price_km:0
+msgid "Price per km"
+msgstr "Precio por km"
+
+#. module: task_hr
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Reserve"
+msgstr "Reserva"
+
+#. module: task_hr
+#: field:project.task.employee,subtotal_hour:0
+msgid "Subtotal (Hours)"
+msgstr "Subtotal (Horas)"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: view:project.task.employee:0
+msgid "Worker Instructions"
+msgstr "Instrucciones"
+
+#. module: task_hr
+#: code:addons/task_hr/task.py:345
+#, python-format
+msgid "In order to delete an employee record, you must cancel it before !"
+msgstr "Para eliminar un registro de empleado debe anularlo primero"
+
+#. module: task_hr
+#: view:multi.task.employee:0
+#: view:project.task.employee:0
+msgid "Activity Info"
+msgstr "Informacion de actividad"
+
+#. module: task_hr
+#: field:multi.task.employee,price_extra_hour:0
+msgid "Price per extra hour"
+msgstr "Precio por hora extra"
+
+#. module: task_hr
+#: view:project.task.employee:0
+#: selection:project.task.employee,state:0
+msgid "Pending Payment"
+msgstr "Pendiente de pago"
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_res_partner_parent_partner_tree">
+            <field name="name">res.partner.parent_partner.tree</field>
+            <field name="model">res.partner</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="before">
+                    <field name="parent_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_group_parent_partner_filter">
+            <field name="name">res.partner.group.parent_partner.filter</field>
+            <field name="model">res.partner</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <group string="Group By..." position="inside">
+                    <filter string="Parent Partner" icon="terp-personal" 
+                        domain="[]" context="{'group_by' : 'parent_id'}"/>
+                </group>
+            </field>
+        </record>
+    </data>
+</openerp>

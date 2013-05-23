@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="file_format_chronoexpress" model="file.format">
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field eval="&quot;&quot;&quot;Chronoexpress&quot;&quot;&quot;" name="name"/>
+            <field eval="1" name="header"/>
+            <field eval="&quot;&quot;&quot;chronoexpress.txt&quot;&quot;&quot;" name="file_name"/>
+            <field eval="&quot;&quot;&quot;/tmp&quot;&quot;&quot;" name="path"/>
+            <field eval="False" name="header"/>
+        </record>
+
+        <record id="file_format_field_referencia" model="file.format.field">
+            <field name="name">Referencia</field>
+            <field name="align">left</field>
+            <field name="sequence" eval="1"/>
+            <field name="length" eval="20"/>
+            <field name="fill_char" eval="&quot;&quot;&quot; &quot;&quot;&quot;"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field name="expression" eval="&quot;&quot;&quot;$name&quot;&quot;&quot;"/>
+        </record>
+
+        <record id="file_format_field_destinatario" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Destinatario&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field name="sequence" eval="2"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$partner_id.name or $address_id.name&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_dir_destinatario" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Direccion Destinatario&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field name="sequence" eval="3"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;\&quot;%s %s\&quot; % ($address_id.street or '', $address_id.street2 or '')&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_att_destinatario" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Att Destinatario (contacto)&quot;&quot;&quot;" name="name"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field name="sequence" eval="4"/>
+            <field eval="40" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_cp" model="file.format.field">
+            <field eval="&quot;&quot;&quot;CP&quot;&quot;&quot;" name="name"/>
+            <field eval="5" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="7" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$address_id.zip or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_telefono" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Telefono&quot;&quot;&quot;" name="name"/>
+            <field eval="6" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="15" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$address_id.phone or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+
+        <record id="file_format_field_poblacion" model="file.format.field">
+            <field eval="&quot;&quot;&quot;poblacion&quot;&quot;&quot;" name="name"/>
+            <field eval="7" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$address_id.city or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_tipo_porte" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Tipo Porte&quot;&quot;&quot;" name="name"/>
+            <field eval="8" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="1" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;'p'&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_tipo_producto" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Tipo Producto&quot;&quot;&quot;" name="name"/>
+            <field eval="9" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="2" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$carrier_id.product_id.default_code or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_num_bultos" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Num. Bultos&quot;&quot;&quot;" name="name"/>
+            <field eval="10" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="6" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;str($number_of_packages or 1)&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+
+        <record id="file_format_field_kilos" model="file.format.field">
+            <field eval="&quot;&quot;&quot;kilos&quot;&quot;&quot;" name="name"/>
+            <field eval="11" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="10" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;str($weight or 1)&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_reembolso" model="file.format.field">
+            <field eval="&quot;&quot;&quot;reembolso&quot;&quot;&quot;" name="name"/>
+            <field eval="12" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="12" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$carrier_id.reimbursement and $sale_id and str($sale_id.amount_total) or ''&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_cod_pais" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Cod. Pais&quot;&quot;&quot;" name="name"/>
+            <field eval="13" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="4" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$address_id.country_id and $address_id.country_id.keypai or ''&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_observaciones_1" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Observaciones 1&quot;&quot;&quot;" name="name"/>
+            <field eval="14" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_observaciones_2" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Observaciones 2&quot;&quot;&quot;" name="name"/>
+            <field eval="15" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_sms_destinatario" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Sms Destinatario&quot;&quot;&quot;" name="name"/>
+            <field eval="16" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="30" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$address_id.mobile or ''&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_email_destinatario" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Email Destinatario&quot;&quot;&quot;" name="name"/>
+            <field eval="17" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="100" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$address_id.email or ''&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_entrega_sabado" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Entrega Sabado&quot;&quot;&quot;" name="name"/>
+            <field eval="18" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="1" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_impresora" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Impresora&quot;&quot;&quot;" name="name"/>
+            <field eval="19" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="70" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+
+        <record id="file_format_field_valor_asegurado" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Valor Asegurado&quot;&quot;&quot;" name="name"/>
+            <field eval="20" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="12" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <!-- El codigo sera la referencia que se introduzca en la empresa transportista -->
+        <record id="file_format_field_cod_cliente_rte" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Cod. Cliente Remitente&quot;&quot;&quot;" name="name"/>
+            <field eval="21" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="9" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$carrier_id.partner_id.ref or ''&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_nom_cliente_rte" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Nombre Cliente Remitente&quot;&quot;&quot;" name="name"/>
+            <field eval="22" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$company_id.partner_id.name or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_direccion_rte" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Direccion Remitente&quot;&quot;&quot;" name="name"/>
+            <field eval="23" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$company_id.street or ' ' + $company_id.street2 or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_poblacion_rte" model="file.format.field">
+            <field eval="&quot;&quot;&quot;Poblacion Remitente&quot;&quot;&quot;" name="name"/>
+            <field eval="24" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="40" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$company_id.city or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+
+        <record id="file_format_field_cp_rte" model="file.format.field">
+            <field eval="&quot;&quot;&quot;C.P Remitente&quot;&quot;&quot;" name="name"/>
+            <field eval="25" name="sequence"/>
+            <field eval="&quot;&quot;&quot;left&quot;&quot;&quot;" name="align"/>
+            <field eval="5" name="length"/>
+            <field eval="&quot;&quot;&quot; &quot;&quot;&quot;" name="fill_char"/>
+            <field name="format_id" ref="file_format_chronoexpress"/>
+            <field eval="&quot;&quot;&quot;$company_id.zip or ' '&quot;&quot;&quot;" name="expression"/>
+        </record>
+    </data>
+</openerp>

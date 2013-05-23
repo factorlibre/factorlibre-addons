@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="minimum_price_tree_view" model="ir.ui.view">
+            <field name="name">product.minimum.pricelist.tree</field>
+            <field name="model">product.minimum.pricelist</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product Minimum Price">
+                    <field name="name"/>
+                    <field name="minimum_percent"/>
+                    <field name="priority"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="minimum_price_form_view" model="ir.ui.view">
+            <field name="name">product.minimum.pricelist.form</field>
+            <field name="model">product.minimum.pricelist</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Product Minimum Price">
+                    <group colspan="4" col="6">
+                        <field name="priority"/>
+                        <field name="name"/>
+                        <field name="minimum_percent"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Products">
+                            <field name="product_ids" nolabel="1" colspan="4"/>
+                        </page>
+                        <page string="Categories">
+                            <field name="product_category_ids" nolabel="1" colspan="4"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="minimum_price_action" model="ir.actions.act_window">
+            <field name="name">Product Minimum Price list</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.minimum.pricelist</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="config_minimum_pricelist" parent="base.menu_sale_config_sales"
+            action="minimum_price_action"/>
+    </data>
+</openerp>

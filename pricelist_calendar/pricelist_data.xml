@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="calendar_price" model="product.price.type">
+            <field name="name">Calendar</field>
+            <field name="field">list_price</field>
+        </record>
+    </data>
+</openerp>

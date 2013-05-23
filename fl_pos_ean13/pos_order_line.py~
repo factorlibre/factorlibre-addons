@@ -1,0 +1,17 @@
+class pos_order_line(osv.osv):
+    _inherit = 'pos.order.line'
+
+    _columns = {
+        'ean13': fields.char('EAN13', size=128),
+    }
+
+    def onchange_ean13(self, cr, uid, ids, ean13):
+        res = {'value': {}}
+
+        if not ean13:
+            return res
+        product_ids = self.pool.get('product.product').search(cr, uid, [('ean13','=',ean13)])
+        if product_ids:
+            res['value']['product_id'] = product_ids[0]
+        return res
+pos_order_line()

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="multi_task_employee_view" model="ir.ui.view">
+            <field name="name">multi.task.employee.form</field>
+            <field name="model">multi.task.employee</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create Employee Tasks">
+                    <group colspan="4">
+                        <field name="coordinator"/>
+                        <separator colspan="4" string="Employees"/>
+                        <field name="employee_ids" height="150" colspan="4"
+                            nolabel="1"/>
+                    </group>
+                    <separator colspan="4" string="Work Address"/>
+                    <field name="work_address" colspan="4" nolabel="1"/>
+                    <notebook colspan="4">
+                        <page string="Activity Info">
+                            <separator string="Activity" colspan="4"/>
+                            <field name="work_activity" colspan="4"
+                                nolabel="1"/>
+                            <separator string="Worker Instructions" colspan="4"/>
+                            <field name="instructions" colspan="4"
+                                nolabel="1"/>
+                            <separator string="Uniform" colspan="4"/>
+                            <field name="uniform" colspan="4"
+                                nolabel="1"/>
+                        </page>
+                        <page string="Work Info">
+                            
+                            <field name="work_period_ids" colspan="4" nolabel="1" mode="tree,form">
+                                <tree string="Work Periods">
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                </tree>
+                                <form>
+                                    <field name="start_date" 
+                                        on_change="onchange_date(start_date, end_date)"/>
+                                    <field name="end_date"
+                                        on_change="onchange_date(start_date, end_date)"/>
+                                </form>
+                            </field>
+                            <group colspan="4" col="8">
+                                <field name="price_hour"/>
+                                <field name="price_km"/>
+                                <field name="price_extra_hour"/>
+                                <field name="price_diet"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    <button name="create_lines" type="object"
+                        string="Create" icon="gtk-ok"/>
+                    <button special="cancel" string="Cancel" icon="gtk-cancel" />
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Create Employee Tasks"
+            res_model="multi.task.employee"
+            src_model="project.task"
+            view_mode="form"
+            target="new"
+            id="multi_task_employee_action"/>
+
+    </data>
+</openerp>

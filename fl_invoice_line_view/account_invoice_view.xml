@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_invoice_line_page_notes_form" model="ir.ui.view">
+            <field name="name">account.invoice.line.page_notes.form</field>
+            <field name="model">account.invoice.line</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <separator string="Notes" position="replace"/>
+                <field colspan="4" name="note" position="replace"/>
+                <separator string="Taxes" position="replace"/>
+                <field name="invoice_line_tax_id" position="replace">
+                    <notebook colspan="4">
+                        <page string="Taxes">
+                            <field colspan="4" name="invoice_line_tax_id" context="{'type':parent.type}" domain="[('parent_id','=',False),('company_id', '=', parent.company_id)]" nolabel="1"/>
+                        </page>
+                        <page string="Notes">
+                            <field colspan="4" name="note" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

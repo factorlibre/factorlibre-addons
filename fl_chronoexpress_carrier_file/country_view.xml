@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="res_country_keypai_view" model="ir.ui.view">
+            <field name="name">res.country.keypai.form</field>
+            <field name="model">res.country</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_country_form"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="keypai"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="res_country_keypai_tree_view" model="ir.ui.view">
+            <field name="name">res.country.keypai.tree</field>
+            <field name="model">res.country</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="base.view_country_tree"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="keypai"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

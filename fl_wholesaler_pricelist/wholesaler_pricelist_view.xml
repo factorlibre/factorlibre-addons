@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="wholesaler_pricelist_tree_view">
+            <field name="name">wholesaler.pricelist.tree</field>
+            <field name="model">wholesaler.pricelist.config</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Wholesaler Pricelist">
+                    <field name="sequence"/>
+                    <field name="pricelist_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="wholesaler_pricelist_form_view">
+            <field name="name">wholesaler.pricelist.form</field>
+            <field name="model">wholesaler.pricelist.config</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Wholesaler Pricelist">
+                    <field name="sequence"/>
+                    <field name="pricelist_id"/>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_wholesaler_pricelist">
+            <field name="name">Wholesaler Pricelist</field>
+            <field name="res_model">wholesaler.pricelist.config</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="wholesaler_pricelist_menu" parent="product.menu_product_pricelist_main"
+            action="action_wholesaler_pricelist" groups="base.group_sale_manager"/>        
+    </data>
+</openerp>

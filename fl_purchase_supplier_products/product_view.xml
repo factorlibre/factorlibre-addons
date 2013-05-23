@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="product_template_tree_supplier">
+            <field name="name">product.template.supplier.tree</field>
+            <field name="model">product.template</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="seller_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_template_supplier_filter">
+            <field name="name">product.template.supplier.filter</field>
+            <field name="model">product.template</field>
+            <field name="type">search</field>
+            <field name="inherit_id" 
+                ref="product_variant_multi.product_search_form_view_template"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <newline/>
+                    <group  expand='0' string='Group by...'>
+                       <filter string='Supplier' icon="terp-mrp" domain="[]" context="{'group_by' : 'seller_id'}"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_product_tree_supplier">
+            <field name="name">product.product.supplier.tree</field>
+            <field name="model">product.product</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="before">
+                    <field name="seller_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="product_product_supplier_filter">
+            <field name="name">product.product.supplier.filter</field>
+            <field name="model">product.product</field>
+            <field name="type">search</field>
+            <field name="inherit_id" 
+                ref="product.product_search_form_view"/>
+            <field name="arch" type="xml">
+                <group string="Group by..." position="inside">
+                    <separator orientation="vertical"/>
+                    <filter string='Supplier' icon="terp-mrp" domain="[]" context="{'group_by' : 'seller_id'}"/>
+                </group>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

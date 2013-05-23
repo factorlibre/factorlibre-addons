@@ -1,0 +1,4 @@
+import pricelist
+import hr_timesheet
+import project
+import account_analytic

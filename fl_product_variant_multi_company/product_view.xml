@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="product_template_multicompany_inh" model="ir.ui.view">
+            <field name="name">product.template.multicompany.form</field>
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="priority" eval="20"/> 
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="variant_ids" position="after">
+                        <newline/>
+                        <group colspan="4" col="6" groups="stock.group_stock_manager">
+                            <field name="company_price_ids" colspan="4" 
+                                mode="tree" nolabel="1">
+                                <tree string="Company Prices" editable="top">
+                                    <field name="company_id" widget="selection"/>
+                                    <field name="list_price"/>
+                                    <field name="standard_price"/>
+                                </tree>
+                            </field>
+                            <button colspan="2" name="update_multi_company_prices"
+                                type="object" string="Update Prices"/>
+                        </group>
+                    </field>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>

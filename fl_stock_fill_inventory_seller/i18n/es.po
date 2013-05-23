@@ -1,0 +1,49 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#   * fl_stock_fill_inventory_seller
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-26 09:24+0000\n"
+"PO-Revision-Date: 2013-02-26 09:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: fl_stock_fill_inventory_seller
+#: model:ir.model,name:fl_stock_fill_inventory_seller.model_stock_fill_inventory
+msgid "Import Inventory"
+msgstr "Importar inventario"
+
+#. module: fl_stock_fill_inventory_seller
+#: model:ir.model,name:fl_stock_fill_inventory_seller.model_stock_inventory_line
+msgid "Inventory Line"
+msgstr "Línea inventario"
+
+#. module: fl_stock_fill_inventory_seller
+#: field:stock.fill.inventory,seller_id:0
+msgid "Seller"
+msgstr "Proveedor"
+
+#. module: fl_stock_fill_inventory_seller
+#: field:stock.inventory.line,original_qty:0
+msgid "Original Stock"
+msgstr "Stock Original"
+
+#. module: fl_stock_fill_inventory_seller
+#: code:addons/fl_stock_fill_inventory_seller/wizard/stock_fill_inventory.py:99
+#, python-format
+msgid "No product in this location."
+msgstr "No existen productos en esta ubicación."
+
+#. module: fl_stock_fill_inventory_seller
+#: code:addons/fl_stock_fill_inventory_seller/wizard/stock_fill_inventory.py:99
+#, python-format
+msgid "Warning !"
+msgstr "Aviso !"
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="nan_partner_risk.trans_risk_router_to_router" model="workflow.transition">
+            <field name="act_from" ref="nan_partner_risk.act_risk_router"/>
+            <field name="act_to" ref="sale.act_router"/>
+            <field name="condition">partner_id.company_credit_limit == 0.0 or partner_id.available_risk - amount_total >= 0.0</field>
+        </record>
+        <record id="nan_partner_risk.trans_risk_router_to_wait_risk_approval" model="workflow.transition">
+            <field name="act_from" ref="nan_partner_risk.act_risk_router"/>
+            <field name="act_to" ref="nan_partner_risk.act_wait_risk_approval"/>
+            <field name="condition">partner_id.company_credit_limit != 0.0 or partner_id.available_risk - amount_total &lt; 0.0</field>
+        </record>
+    </data>
+</openerp>

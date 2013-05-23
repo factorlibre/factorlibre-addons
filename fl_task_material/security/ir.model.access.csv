@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_extraordinary_expenses,project.task.extraordinary.expenses,model_project_task_extraordinary_expenses,project.group_project_user,1,1,1,1
+access_task_material,project.task.material,model_project_task_material,project.group_project_user,1,1,1,1
