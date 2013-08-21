@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wizz_stock_picking_view" model="ir.ui.view">
+		        <field name="name">wizz.stock.picking.form</field>
+		        <field name="model">wizz.stock.picking</field>
+		        <field name="type">form</field>
+		        <field name="arch" type="xml">
+					<form string="Optimize Picking">
+				    	<separator colspan="4" string="Optimize pickings" />
+				    	<label string="Do you want to optimize theses stock picking ?"/>
+				 <separator colspan="4"/>
+    				<group colspan="4" col="6">
+					<button special="cancel" string="_Cancel" icon='gtk-cancel'/>
+					<button name="do_optimize" string="Yes" type="object" icon="gtk-apply"/>
+					</group>			
+				</form>
+			</field>
+		</record>
+
+		 <act_window name="Optimize deliveries"		    
+			res_model="wizz.stock.picking"
+			src_model="stock.picking"
+			view_mode="form"
+                        multi="True"
+            key2="client_action_multi"
+			target="new"        
+			id="action_view_wizz_stock_picking"/>	
+
+
+		<record id="wizz_picking_check_availability_view" model="ir.ui.view">
+		        <field name="name">wizz.picking.check.availability.form</field>
+		        <field name="model">wizz.picking.check.availability</field>
+		        <field name="type">form</field>
+		        <field name="arch" type="xml">
+					<form string="Check availability Picking">
+				    	<separator colspan="4" string="Check availability pickings" />
+				    	<label string="Do you want to check availability theses stock picking ?"/>
+				 <separator colspan="4"/>
+    				<group colspan="4" col="6">
+					<button special="cancel" string="_Cancel" icon='gtk-cancel'/>
+					<button name="do_check_availability" string="Yes" type="object" icon="gtk-apply"/>
+					</group>			
+				</form>
+			</field>
+		</record>
+
+		 <act_window name="Check Availability"		    
+			res_model="wizz.picking.check.availability"
+			src_model="stock.picking"
+			view_mode="form"
+                        multi="True"
+            key2="client_action_multi"
+			target="new"        
+			id="action_view_wizz_stock_picking_check_availability"/>	
+		
+
+        
+        
+
+    </data>
+</openerp>

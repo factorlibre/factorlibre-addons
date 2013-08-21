@@ -1,0 +1,108 @@
+# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+##############################################################################
+#
+#    OpenERP - Account balance reporting engine
+#    Copyright (C) 2009 Pexego Sistemas Informáticos. All Rights Reserved
+#    $Id$
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+
+"""
+Account balance report print wizard
+"""
+__author__ = "Borja López Soilán (Pexego)"
+
+
+import wizard
+import pooler
+from osv import osv, fields
+from tools.translate import _
+
+
+class fl_wizard_print(osv.osv_memory):
+    """
+    Account balance report print wizard.
+    Allows the user to select which 'balance report' will be printed,
+    and which printing template will be used. By default the current
+    balance report and its template printing design will be used.
+    """
+    _name = 'fl.wizard.print'
+    _columns = {
+        'report_id' :fields.many2one('account.balance.reporting', 'ReportBalance', required=True),
+        'report_xml_id' :fields.many2one('ir.actions.report.xml', 'ReportXML', required=True)
+    
+    }
+
+    def _get_report_id(self, cr, uid, ids, context={}):
+        rpt_facade = pooler.get_pool(cr.dbname).get('account.balance.reporting')
+        report_id = None
+
+        if ids.get('active_model') == 'account.balance.reporting':
+            report_id = ids.get('active_id')
+            report_ids = rpt_facade.search(cr, uid, [('id', '=', report_id)])
+            report_id = report_ids and report_ids[0] or None
+
+        return report_id
+
+    def _get_xml_report_id(self, cr, uid, ids, context={}):
+        rpt_facade = pooler.get_pool(cr.dbname).get('account.balance.reporting')
+        report_id = None
+        report_xml_id = None
+        if ids.get('active_model') == 'account.balance.reporting':
+            report_id = ids.get('active_id')
+            report_ids = rpt_facade.search(cr, uid, [('id', '=', report_id)])
+            report_id = report_ids and report_ids[0] or None
+            if report_id:
+                report = rpt_facade.browse(cr, uid, [report_id])[0]
+                if report.template_id and report.template_id.report_xml_id:
+                    report_xml_id = report.template_id.report_xml_id.id
+        return report_xml_id
+
+
+    _defaults = {
+        'report_id': _get_report_id,
+        'report_xml_id': _get_xml_report_id,
+    }
+    
+    
+    def print_action(self, cr, uid, data, context):
+        """
+        Sets the printing template (as selected by the user) before printing.
+        """
+        pool_ba_report = pooler.get_pool(cr.dbname).get('account.balance.reporting')
+        rpt_facade = pooler.get_pool(cr.dbname).get('ir.actions.report.xml')
+        vals={}
+        if context.get('report_xml_id'):
+            report_xml_id = context['report_xml_id']
+            report_xml_ids = rpt_facade.search(cr, uid, [('id', '=', report_xml_id)])
+            report_xml_id = report_xml_ids and report_xml_ids[0] or None
+            if report_xml_id:
+                report_xml = rpt_facade.browse(cr, uid, [report_xml_id])[0]
+                datas={
+                    'ids': [context['report_id']],
+                    'model': 'account.balance.reporting'
+                }
+            reports_ids = pool_ba_report.search(cr, uid, [('id', '=', context['report_id'])])
+            if reports_ids:
+                print reports_ids
+                report_instance = pool_ba_report.browse(cr, uid, reports_ids[0])
+                if report_instance.calc_date:
+                    print report_instance.calc_date
+                    vals = {'type': 'ir.actions.report.xml','report_name': report_xml.report_name, 'datas':datas,}
+        return vals
+       
+fl_wizard_print()

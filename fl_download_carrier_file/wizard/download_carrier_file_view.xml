@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="download_carrier_file_wizard_form" model="ir.ui.view">
+            <field name="name">download.carrier.file.wizard.form</field>
+            <field name="model">download.carrier.file.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Download Carrier File">
+                    <field name="state" invisible="1"/>
+                    <group colspan="4" attrs="{'invisible': [('state','!=','init')]}">
+                        <field name="format_id" width="600"/>
+                        <button colspan="4" string="Download"
+                            name="download_file" type="object"/>
+                    </group>
+                    <group colspan="4" attrs="{'invisible': [('state','!=','download')]}">
+                        <field name="carrier_file" filename="carrier_file_name"/>
+                    </group>                
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_download_carrier_file_wizard" model="ir.actions.act_window">
+            <field name="name">Download Carrier Files</field>
+            <field name="res_model">download.carrier.file.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_download_carrier_file"
+            parent="delivery.menu_delivery" action="action_view_download_carrier_file_wizard"/>
+
+    </data>
+</openerp>

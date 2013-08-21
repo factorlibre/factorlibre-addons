@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+        <record model="ir.ui.view" id="view_fl_account_balance_reporting_form">
+            <field name="name">account.balance.reporting.form</field>
+            <field name="model">account.balance.reporting</field>
+			<field name="inherit_id" ref="account_balance_reporting.view_account_balance_reporting_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@string='Calculate']" position="replace">
+			        <button name="wiz_account_balance_reporting_calculate" string="Calculate(beta)" states="draft" type="object" icon="gtk-ok"/>
+                </xpath>
+                <xpath expr="//button[@string='Confirm']" position="replace">
+                    <button name="action_confirm" string="Confirm" states="calc_done" type="object" icon="gtk-apply"/>
+                </xpath>
+                <xpath expr="//button[@string='Cancel']" position="replace">
+                    <button name="action_cancel" string="Cancel" states="calc_done,done" type="object"  icon="gtk-cancel"/>
+                </xpath>
+                <xpath expr="//button[@string='Draft']" position="replace">
+					<button name="action_recover" string="Draft" type="object" states="canceled" icon="gtk-undo"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

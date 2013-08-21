@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="fl_wizard_print_form_view" model="ir.ui.view">
+            <field name="name">fl.wizard.print.form.view</field>
+            <field name="model">fl.wizard.print</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">    
+                <form string="Print report">
+                    <field string="Report data" name="report_id"/>
+                    <newline/>
+                    <field string="Report design" name="report_xml_id" domain="[('model','=','account.balance.reporting')]"/>
+                    <newline/>
+                    <button string="Get Report" name="print_action" type="object" icon="gtk-ok" context="{'report_id':report_id,'report_xml_id':report_xml_id}"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="fl_wiz_account_balance_reporting_print" model="ir.actions.act_window">
+            <field name="name">Print report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fl.wizard.print</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="fl_wizard_print_form_view"/>
+            <field name="target">new</field>
+        </record>
+        <act_window 
+            id="fl_wiz_account_balance_reporting_print" 
+            name="Print report" 
+            res_model="fl.wizard.print" 
+            src_model="account.balance.reporting" 
+            view_mode="form" 
+            key2="client_action_multi"
+            target="new"
+        />
+
+
+    </data>
+</openerp>

@@ -37,6 +37,22 @@ class stock_inventory_line(osv.osv):
             product, uom=uom, to_date=to_date)
         if res.get('value', {}).get('product_qty', 0):
             res['value']['original_qty'] = res['value']['product_qty']
+        else:
+            res['value']['original_qty']=0
         return res
- 
+
+    def create(self, cr, uid, vals, context=None):
+        if vals.get('product_id'):
+            product_vals = self.on_change_product_id(cr, uid, [], [],vals.get('product_id'))
+            vals['original_qty'] = product_vals['value'].get('original_qty')
+
+        return super(stock_inventory_line, self).create(cr, uid, vals, context=context)
+
+
+    def write(self, cr, uid, ids, vals, context=None):
+        if vals.get('product_id'):
+            product_vals = self.on_change_product_id(cr, uid, [], [],vals.get('product_id'))
+            vals['original_qty'] = product_vals['value'].get('original_qty')
+        return super(stock_inventory_line, self).write(cr, uid, ids, vals, context=context)
+
 stock_inventory_line()

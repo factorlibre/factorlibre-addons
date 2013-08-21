@@ -1,0 +1,721 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* fl_eshop_picking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20130627-233424\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-01 15:08+0000\n"
+"PO-Revision-Date: 2013-08-01 17:10+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_stock_partial_picking_line_original_quantity
+#: field:stock.partial.picking.line,original_quantity:0
+msgid "Original Quantity"
+msgstr "Original Quantity"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/stock.py:236
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:51
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_stock_picking_complete_factor
+#: field:stock.picking,complete_factor:0
+msgid "Complete Factor"
+msgstr "Factor Completo"
+
+#. module: fl_eshop_picking
+#: view:stock.process.picking.wizard:0
+msgid "_Process"
+msgstr "_Procesar"
+
+#. module: fl_eshop_picking
+#: view:wizz.stock.picking:0
+msgid "Do you want to optimize theses stock picking ?"
+msgstr "Desea intentar finalizar estos albaranes ?"
+
+#. module: fl_eshop_picking
+#: view:wizz.stock.picking:0
+msgid "Optimize Picking"
+msgstr "Finalizar Albaran"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_product_uom
+#: field:split.picking.line,product_uom:0
+msgid "Unit of Measure"
+msgstr "Unidad"
+
+#. module: fl_eshop_picking
+#: view:split.picking:0 view:split.picking.line:0
+msgid "Product Moves"
+msgstr "Lineas de producto"
+
+#. module: fl_eshop_picking
+#: view:stock.process.picking.wizard:0
+msgid "Process Pickings"
+msgstr "Procesar Albaranes"
+
+#. module: fl_eshop_picking
+#: constraint:stock.move:0
+msgid "You can not move products from or to a location of the type view."
+msgstr "You can not move products from or to a location of the type view."
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_wizz_picking_check_availability
+msgid "wizz.picking.check.availability"
+msgstr "wizz.picking.check.availability"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/stock.py:236
+#, python-format
+msgid "Can't process delivery order without two copies printed"
+msgstr ""
+"No se puede procesar la orden de entrega sin imprimir las dos copias del "
+"albarán"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_split_picking
+#: model:ir.model,name:fl_eshop_picking.model_stock_partial_picking
+msgid "Partial Picking Processing Wizard"
+msgstr "Partial Picking Processing Wizard"
+
+#. module: fl_eshop_picking
+#: view:stock.picking:0
+msgid "Reset"
+msgstr "Resetear"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_hide_tracking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_tracking
+#: field:split.picking,hide_tracking:0 field:split.picking.line,tracking:0
+msgid "Tracking"
+msgstr "Tracking"
+
+#. module: fl_eshop_picking
+#: view:wizz.picking.check.availability:0
+msgid "Do you want to check availability theses stock picking ?"
+msgstr "¿Desea comprobar la disponibilidad de estos albaranes?"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_picking.py:180
+#, python-format
+msgid ""
+"Please select multiple stock pickings to check availability in the list view."
+msgstr "Seleccione varios albaranes para comprobar su disponibilidad."
+
+#. module: fl_eshop_picking
+#: view:split.picking:0
+msgid "Products"
+msgstr "Productos"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_update_cost
+#: field:split.picking.line,update_cost:0
+msgid "Need cost update"
+msgstr "Actializar coste"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/stock.py:425
+#, python-format
+msgid "Warning !"
+msgstr "Warning !"
+
+#. module: fl_eshop_picking
+#: view:wizz.picking.check.availability:0
+msgid "Check availability Picking"
+msgstr "Comprobar disponibilidad"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento stock"
+
+#. module: fl_eshop_picking
+#: view:stock.picking.including.products:0
+msgid "Show"
+msgstr "Mostrar"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/stock.py:158
+#, python-format
+msgid ""
+"Stock picking must contains lines in Waiting Availability and Available."
+msgstr ""
+"El Albarán debe contener lineas en estado esperando disponibilidad y en "
+"estado disponible."
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_picking.py:47
+#, python-format
+msgid "Please select multiple stock pickings to optimize in the list view."
+msgstr "Por favor, selecione multiples albaranes para realizar la operación"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/stock.py:157
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:75
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:86
+#: code:addons/fl_eshop_picking/wizard/stock_picking.py:46
+#: code:addons/fl_eshop_picking/wizard/stock_picking.py:179
+#, python-format
+msgid "Warning"
+msgstr "Aviso"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:68
+#, python-format
+msgid "Warning!"
+msgstr "Warning!"
+
+#. module: fl_eshop_picking
+#: view:split.picking:0 view:stock.picking:0
+#: view:stock.process.picking.wizard:0 view:wizz.picking.check.availability:0
+#: view:wizz.stock.picking:0
+msgid "_Cancel"
+msgstr "Cancelar"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: fl_eshop_picking
+#: view:wizz.picking.check.availability:0
+msgid "Check availability pickings"
+msgstr "Comprobar disponibilidad"
+
+#. module: fl_eshop_picking
+#: view:split.picking:0
+msgid "_split"
+msgstr "Dividir"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_move_id
+#: field:split.picking.line,move_id:0
+msgid "Move"
+msgstr "Linea"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_wizz_stock_picking
+msgid "wizz.stock.picking"
+msgstr "wizz.stock.picking"
+
+#. module: fl_eshop_picking
+#: model:ir.actions.act_window,name:fl_eshop_picking.action_view_wizz_stock_picking_check_availability
+msgid "Check Availability"
+msgstr "Comprobar disponibilidad"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_stock_process_picking_wizard_state
+#: field:stock.process.picking.wizard,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_location_id
+#: field:split.picking.line,location_id:0
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: fl_eshop_picking
+#: help:split.picking.line,cost:0
+msgid "Unit Cost for this product line"
+msgstr "Coste"
+
+#. module: fl_eshop_picking
+#: view:stock.process.picking.wizard:0
+msgid "Process pickings that have all lines in reserved status"
+msgstr ""
+"Procesa los albaranes de los cuales se han impreso dos copias y están "
+"reservados completamente"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_stock_move_supplier_id
+#: field:stock.move,supplier_id:0
+msgid "Suppplier"
+msgstr "Proveedor"
+
+#. module: fl_eshop_picking
+#: view:stock.picking:0
+msgid "Reservado"
+msgstr "Reservado"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:51
+#, python-format
+msgid ""
+"Original Quantity in line was %s is not allowed to assign %s\" % "
+"(wizard_line.original_quantity, wizard_line.quantity)))\n"
+"\n"
+"        assert len(ids) == 1, 'Partial picking processing may only be done "
+"one at a time'\n"
+"        stock_picking = self.pool.get('stock.picking')\n"
+"        stock_move = self.pool.get('stock.move')\n"
+"        uom_obj = self.pool.get('product.uom')\n"
+"        partial = self.browse(cr, uid, ids[0], context=context)\n"
+"        partial_data = {\n"
+"            'delivery_date' : partial.date\n"
+"        }\n"
+"        picking_type = partial.picking_id.type\n"
+"        for wizard_line in partial.move_ids:\n"
+"            line_uom = wizard_line.product_uom\n"
+"            move_id = wizard_line.move_id.id\n"
+"\n"
+"            #Quantiny must be Positive\n"
+"            if wizard_line.quantity < 0:\n"
+"                raise osv.except_osv(_('Warning!'), _('Please provide Proper "
+"Quantity !'))\n"
+"\n"
+"            #Compute the quantity for respective wizard_line in the line uom "
+"(this jsut do the rounding if necessary)\n"
+"            qty_in_line_uom = uom_obj._compute_qty(cr, uid, line_uom.id, "
+"wizard_line.quantity, line_uom.id)\n"
+"\n"
+"            if line_uom.factor and line_uom.factor <> 0:\n"
+"                if float_compare(qty_in_line_uom, wizard_line.quantity, "
+"precision_rounding=line_uom.rounding) != 0:\n"
+"                    raise osv.except_osv(_('Warning'), _('The uom rounding "
+"does not allow you to ship \"%s %s\", only roundings of \"%s %s\" is "
+"accepted by the uom.') % (wizard_line.quantity, line_uom.name, line_uom."
+"rounding, line_uom.name))\n"
+"            if move_id:\n"
+"                #Check rounding Quantity.ex.\n"
+"                #picking: 1kg, uom kg rounding = 0.01 (rounding to 10g), \n"
+"                #partial delivery: 253g\n"
+"                #=> result= refused, as the qty left on picking would be "
+"0.747kg and only 0.75 is accepted by the uom.\n"
+"                initial_uom = wizard_line.move_id.product_uom\n"
+"                #Compute the quantity for respective wizard_line in the "
+"initial uom\n"
+"                qty_in_initial_uom = uom_obj._compute_qty(cr, uid, line_uom."
+"id, wizard_line.quantity, initial_uom.id)\n"
+"                without_rounding_qty = (wizard_line.quantity / line_uom."
+"factor) * initial_uom.factor\n"
+"                if float_compare(qty_in_initial_uom, without_rounding_qty, "
+"precision_rounding=initial_uom.rounding) != 0:\n"
+"                    raise osv.except_osv(_('Warning'), _('The rounding of "
+"the initial uom does not allow you to ship \"%s %s\", as it would let a "
+"quantity of \"%s %s\" to ship and only roundings of \"%s %s\" is accepted by "
+"the uom.') % (wizard_line.quantity, line_uom.name, wizard_line.move_id."
+"product_qty - without_rounding_qty, initial_uom.name, initial_uom.rounding, "
+"initial_uom.name))\n"
+"            else:\n"
+"                seq_obj_name =  'stock.picking.' + picking_type\n"
+"                move_id = stock_move.create(cr,uid,{'name' : self.pool.get"
+"('ir.sequence').get(cr, uid, seq_obj_name),\n"
+"                                                    'product_id': "
+"wizard_line.product_id.id,\n"
+"                                                    'product_qty': "
+"wizard_line.quantity,\n"
+"                                                    'product_uom': "
+"wizard_line.product_uom.id,\n"
+"                                                    'prodlot_id': "
+"wizard_line.prodlot_id.id,\n"
+"                                                    'location_id' : "
+"wizard_line.location_id.id,\n"
+"                                                    'location_dest_id' : "
+"wizard_line.location_dest_id.id,\n"
+"                                                    'picking_id': partial."
+"picking_id.id\n"
+"                                                    },context=context)\n"
+"                stock_move.action_confirm(cr, uid, [move_id], context)\n"
+"            partial_data['move%s' % (move_id)] = {\n"
+"                'product_id': wizard_line.product_id.id,\n"
+"                'product_qty': wizard_line.quantity,\n"
+"                'product_uom': wizard_line.product_uom.id,\n"
+"                'prodlot_id': wizard_line.prodlot_id.id,\n"
+"            }\n"
+"            if (picking_type == 'in') and (wizard_line.product_id."
+"cost_method == 'average'):\n"
+"                partial_data['move%s' % (wizard_line.move_id.id)].update"
+"(product_price=wizard_line.cost,\n"
+"                                                                  product_currency=wizard_line."
+"currency.id)\n"
+"\n"
+"        picking_id=stock_picking.do_partial(cr, uid, [partial.picking_id."
+"id], partial_data, context=context)\n"
+"        new_picking_id=[]\n"
+"        for ids in picking_id:\n"
+"            new_picking_id.append(picking_id[ids]['delivered_picking'])\n"
+"\n"
+"        if len(new_picking_id)==1 and 'eshop_picking_tree' not in context."
+"keys():\n"
+"            vals={\n"
+"            'name':_(\"Picking Processed"
+msgstr ""
+"Original Quantity in line was %s is not allowed to assign %s\" % "
+"(wizard_line.original_quantity, wizard_line.quantity)))\n"
+"\n"
+"        assert len(ids) == 1, 'Partial picking processing may only be done "
+"one at a time'\n"
+"        stock_picking = self.pool.get('stock.picking')\n"
+"        stock_move = self.pool.get('stock.move')\n"
+"        uom_obj = self.pool.get('product.uom')\n"
+"        partial = self.browse(cr, uid, ids[0], context=context)\n"
+"        partial_data = {\n"
+"            'delivery_date' : partial.date\n"
+"        }\n"
+"        picking_type = partial.picking_id.type\n"
+"        for wizard_line in partial.move_ids:\n"
+"            line_uom = wizard_line.product_uom\n"
+"            move_id = wizard_line.move_id.id\n"
+"\n"
+"            #Quantiny must be Positive\n"
+"            if wizard_line.quantity < 0:\n"
+"                raise osv.except_osv(_('Warning!'), _('Please provide Proper "
+"Quantity !'))\n"
+"\n"
+"            #Compute the quantity for respective wizard_line in the line uom "
+"(this jsut do the rounding if necessary)\n"
+"            qty_in_line_uom = uom_obj._compute_qty(cr, uid, line_uom.id, "
+"wizard_line.quantity, line_uom.id)\n"
+"\n"
+"            if line_uom.factor and line_uom.factor <> 0:\n"
+"                if float_compare(qty_in_line_uom, wizard_line.quantity, "
+"precision_rounding=line_uom.rounding) != 0:\n"
+"                    raise osv.except_osv(_('Warning'), _('The uom rounding "
+"does not allow you to ship \"%s %s\", only roundings of \"%s %s\" is "
+"accepted by the uom.') % (wizard_line.quantity, line_uom.name, line_uom."
+"rounding, line_uom.name))\n"
+"            if move_id:\n"
+"                #Check rounding Quantity.ex.\n"
+"                #picking: 1kg, uom kg rounding = 0.01 (rounding to 10g), \n"
+"                #partial delivery: 253g\n"
+"                #=> result= refused, as the qty left on picking would be "
+"0.747kg and only 0.75 is accepted by the uom.\n"
+"                initial_uom = wizard_line.move_id.product_uom\n"
+"                #Compute the quantity for respective wizard_line in the "
+"initial uom\n"
+"                qty_in_initial_uom = uom_obj._compute_qty(cr, uid, line_uom."
+"id, wizard_line.quantity, initial_uom.id)\n"
+"                without_rounding_qty = (wizard_line.quantity / line_uom."
+"factor) * initial_uom.factor\n"
+"                if float_compare(qty_in_initial_uom, without_rounding_qty, "
+"precision_rounding=initial_uom.rounding) != 0:\n"
+"                    raise osv.except_osv(_('Warning'), _('The rounding of "
+"the initial uom does not allow you to ship \"%s %s\", as it would let a "
+"quantity of \"%s %s\" to ship and only roundings of \"%s %s\" is accepted by "
+"the uom.') % (wizard_line.quantity, line_uom.name, wizard_line.move_id."
+"product_qty - without_rounding_qty, initial_uom.name, initial_uom.rounding, "
+"initial_uom.name))\n"
+"            else:\n"
+"                seq_obj_name =  'stock.picking.' + picking_type\n"
+"                move_id = stock_move.create(cr,uid,{'name' : self.pool.get"
+"('ir.sequence').get(cr, uid, seq_obj_name),\n"
+"                                                    'product_id': "
+"wizard_line.product_id.id,\n"
+"                                                    'product_qty': "
+"wizard_line.quantity,\n"
+"                                                    'product_uom': "
+"wizard_line.product_uom.id,\n"
+"                                                    'prodlot_id': "
+"wizard_line.prodlot_id.id,\n"
+"                                                    'location_id' : "
+"wizard_line.location_id.id,\n"
+"                                                    'location_dest_id' : "
+"wizard_line.location_dest_id.id,\n"
+"                                                    'picking_id': partial."
+"picking_id.id\n"
+"                                                    },context=context)\n"
+"                stock_move.action_confirm(cr, uid, [move_id], context)\n"
+"            partial_data['move%s' % (move_id)] = {\n"
+"                'product_id': wizard_line.product_id.id,\n"
+"                'product_qty': wizard_line.quantity,\n"
+"                'product_uom': wizard_line.product_uom.id,\n"
+"                'prodlot_id': wizard_line.prodlot_id.id,\n"
+"            }\n"
+"            if (picking_type == 'in') and (wizard_line.product_id."
+"cost_method == 'average'):\n"
+"                partial_data['move%s' % (wizard_line.move_id.id)].update"
+"(product_price=wizard_line.cost,\n"
+"                                                                  product_currency=wizard_line."
+"currency.id)\n"
+"\n"
+"        picking_id=stock_picking.do_partial(cr, uid, [partial.picking_id."
+"id], partial_data, context=context)\n"
+"        new_picking_id=[]\n"
+"        for ids in picking_id:\n"
+"            new_picking_id.append(picking_id[ids]['delivered_picking'])\n"
+"\n"
+"        if len(new_picking_id)==1 and 'eshop_picking_tree' not in context."
+"keys():\n"
+"            vals={\n"
+"            'name':_(\"Picking Processed"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/stock.py:425
+#, python-format
+msgid "Not enough stock, unable to reserve the products."
+msgstr "Not enough stock, unable to reserve the products."
+
+#. module: fl_eshop_picking
+#: view:stock.picking:0
+msgid "Force Availability"
+msgstr "Forzar disponibilidad"
+
+#. module: fl_eshop_picking
+#: help:split.picking.line,currency:0
+msgid "Currency in which Unit cost is expressed"
+msgstr "Moneda"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_picking_including_products.py:64
+#, python-format
+msgid "Delivery Orders"
+msgstr "Albaranes de salida"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_currency
+#: field:split.picking.line,currency:0
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: fl_eshop_picking
+#: model:ir.actions.act_window,name:fl_eshop_picking.action_view_stock_picking_including_products
+msgid "Show delivery orders with this products"
+msgstr "Albaranes de salida con estos productos"
+
+#. module: fl_eshop_picking
+#: view:wizz.picking.check.availability:0 view:wizz.stock.picking:0
+msgid "Yes"
+msgstr "Si"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:75
+#, python-format
+msgid ""
+"The uom rounding does not allow you to ship \"%s %s\", only roundings of "
+"\"%s %s\" is accepted by the uom."
+msgstr ""
+"The uom rounding does not allow you to ship \"%s %s\", only roundings of "
+"\"%s %s\" is accepted by the uom."
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_stock_process_picking_wizard_not_processed_pickings
+#: view:stock.process.picking.wizard:0
+#: field:stock.process.picking.wizard,not_processed_pickings:0
+msgid "Not Processed Pickings"
+msgstr "Albaranes no procesados"
+
+#. module: fl_eshop_picking
+#: view:stock.picking:0
+msgid "Cancel picking?"
+msgstr "¿Cancelar albaran?"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_split_picking_line
+msgid "split.picking.line"
+msgstr "split.picking.line"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/stock.py:220
+#: code:addons/fl_eshop_picking/stock.py:247
+#, python-format
+msgid "Products to Process"
+msgstr "Productos a procesar"
+
+#. module: fl_eshop_picking
+#: view:stock.move:0
+msgid "Set Available"
+msgstr "Reservar"
+
+#. module: fl_eshop_picking
+#: constraint:stock.move:0
+msgid "You try to assign a lot which is not from the same product"
+msgstr "Está intentando asignar un lote que no es del mismo producto"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_date
+#: field:split.picking,date:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_stock_partial_picking_line
+msgid "stock.partial.picking.line"
+msgstr "stock.partial.picking.line"
+
+#. module: fl_eshop_picking
+#: sql_constraint:stock.picking:0
+msgid "Reference must be unique per Company!"
+msgstr "Reference must be unique per Company!"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_stock_process_picking_wizard
+msgid "stock.process.picking.wizard"
+msgstr "stock.process.picking.wizard"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_quantity
+#: field:split.picking.line,quantity:0
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_prodlot_id
+#: field:split.picking.line,prodlot_id:0
+msgid "Production Lot"
+msgstr "Lote de producto"
+
+#. module: fl_eshop_picking
+#: view:stock.picking:0
+msgid "Process"
+msgstr "Procesar"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_stock_picking_partially_reserved
+#: field:stock.picking,partially_reserved:0
+msgid "Partially reserved"
+msgstr "Parcialmente Reservado"
+
+#. module: fl_eshop_picking
+#: selection:stock.process.picking.wizard,state:0
+msgid "Done"
+msgstr "Realizado"
+
+#. module: fl_eshop_picking
+#: view:stock.picking:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_move_ids
+#: field:split.picking,move_ids:0
+msgid "Moves"
+msgstr "Lineas"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_location_dest_id
+#: field:split.picking.line,location_dest_id:0
+msgid "Dest. Location"
+msgstr "Ubicación destino"
+
+#. module: fl_eshop_picking
+#: view:split.picking:0 view:stock.picking:0
+msgid "Split"
+msgstr "Dividir"
+
+#. module: fl_eshop_picking
+#: sql_constraint:sale.order:0
+msgid "Order Reference must be unique per Company!"
+msgstr "Order Reference must be unique per Company!"
+
+#. module: fl_eshop_picking
+#: model:res.groups,name:fl_eshop_picking.group_force_availability
+msgid "Force Availability Group"
+msgstr "Force Availability Group"
+
+#. module: fl_eshop_picking
+#: constraint:stock.move:0
+msgid "You must assign a production lot for this product"
+msgstr "Debe asignar un lote de producción para este producto"
+
+#. module: fl_eshop_picking
+#: selection:stock.process.picking.wizard,state:0
+msgid "Init"
+msgstr "Init"
+
+#. module: fl_eshop_picking
+#: view:stock.picking.including.products:0
+msgid "Picking Including Products"
+msgstr "Picking Including Products"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_wizard_id
+#: field:split.picking.line,wizard_id:0
+msgid "Split picking"
+msgstr "Dividir Albarán"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_product_id
+#: field:split.picking.line,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:68
+#, python-format
+msgid "Please provide Proper Quantity !"
+msgstr "Please provide Proper Quantity !"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_picking_id
+#: field:split.picking,picking_id:0
+msgid "Picking"
+msgstr "Albarán"
+
+#. module: fl_eshop_picking
+#: model:ir.actions.act_window,name:fl_eshop_picking.action_stock_process_picking_wizard
+msgid "Process pickings"
+msgstr "Procesar Albaranes"
+
+#. module: fl_eshop_picking
+#: model:ir.model,name:fl_eshop_picking.model_stock_picking_including_products
+msgid "stock.picking.including.products"
+msgstr "stock.picking.including.products"
+
+#. module: fl_eshop_picking
+#: model:ir.actions.act_window,name:fl_eshop_picking.action_view_wizz_stock_picking
+msgid "Optimize deliveries"
+msgstr "Finalizar Albaranes"
+
+#. module: fl_eshop_picking
+#: view:wizz.stock.picking:0
+msgid "Optimize pickings"
+msgstr "Finalizar albaranes"
+
+#. module: fl_eshop_picking
+#: view:stock.picking.including.products:0
+msgid "Show delivery orders including the products in this picking"
+msgstr ""
+"Muestra los albaranes de salida que incluyen alguno de los productos de este "
+"albarán en estado esperando disponibilidad"
+
+#. module: fl_eshop_picking
+#: code:addons/fl_eshop_picking/wizard/stock_partial_picking.py:86
+#, python-format
+msgid ""
+"The rounding of the initial uom does not allow you to ship \"%s %s\", as it "
+"would let a quantity of \"%s %s\" to ship and only roundings of \"%s %s\" is "
+"accepted by the uom."
+msgstr ""
+"The rounding of the initial uom does not allow you to ship \"%s %s\", as it "
+"would let a quantity of \"%s %s\" to ship and only roundings of \"%s %s\" is "
+"accepted by the uom."
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_split_picking_line_cost
+#: field:split.picking.line,cost:0
+msgid "Cost"
+msgstr "Coste"
+
+#. module: fl_eshop_picking
+#: help:split.picking,hide_tracking:0
+msgid ""
+"This field is for internal purpose. It is used to decide if the column "
+"prodlot has to be shown on the move_ids field or not"
+msgstr ""
+"This field is for internal purpose. It is used to decide if the column "
+"prodlot has to be shown on the move_ids field or not"
+
+#. module: fl_eshop_picking
+#: model:ir.model.fields,field_description:fl_eshop_picking.field_stock_process_picking_wizard_processed_pickings
+#: view:stock.process.picking.wizard:0
+#: field:stock.process.picking.wizard,processed_pickings:0
+msgid "Processed Pickings"
+msgstr "Albaranes procesados"
